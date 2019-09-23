@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
+iostream
+-
+Linked_List.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp
 iostream
 -
+Linked_List.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
 

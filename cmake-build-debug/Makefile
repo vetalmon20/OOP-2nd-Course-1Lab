@@ -122,6 +122,33 @@ OOP_2nd_Course_1Lab/fast:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/build
 .PHONY : OOP_2nd_Course_1Lab/fast
 
+Linked_List.obj: Linked_List.cpp.obj
+
+.PHONY : Linked_List.obj
+
+# target to build an object file
+Linked_List.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj
+.PHONY : Linked_List.cpp.obj
+
+Linked_List.i: Linked_List.cpp.i
+
+.PHONY : Linked_List.i
+
+# target to preprocess a source file
+Linked_List.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.i
+.PHONY : Linked_List.cpp.i
+
+Linked_List.s: Linked_List.cpp.s
+
+.PHONY : Linked_List.s
+
+# target to generate assembly for a file
+Linked_List.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.s
+.PHONY : Linked_List.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... OOP_2nd_Course_1Lab
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Linked_List.obj
+	@echo ... Linked_List.i
+	@echo ... Linked_List.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
