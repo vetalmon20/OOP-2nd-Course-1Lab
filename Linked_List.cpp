@@ -252,6 +252,31 @@ template <typename T>
     }
 
 template <typename T>
+    void List<T>::selection_sort() {
+
+        Node <T> *curr = head;
+
+        if (curr == NULL || curr->next == NULL){
+            cout << "Nothing to sort" << endl;
+            return;
+        }
+
+        Node <T> *iterator, *min;
+
+        while(curr != NULL){
+            min = curr;
+            iterator = curr->next;
+            while(iterator != NULL){
+                if(iterator->data <= min->data)
+                    min = iterator;
+                iterator = iterator->next;
+            }
+            swap(curr, min);
+            curr = curr->next;
+        }
+    }
+
+template <typename T>
     void List<T>:: countingsort(int exp, int max_int){
 
         //exp is used to radix algorithm. If u want to use this sort in default conditions

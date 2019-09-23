@@ -46,7 +46,8 @@ int main() {
     //i.mergesort();
     //i.countingsort();
     //i.bucketsort();
-    i.radixsort();
+    //i.radixsort();
+    i.selection_sort();
     i.display(i.get_head());
 
     List<string> s;
@@ -59,7 +60,7 @@ int main() {
     s.display(s.get_head());
     cout << endl;
     Node<string> *SA1 = s.get_head();
-    s.mergesort();
+    s.selection_sort();
     s.display(s.get_head());
 
     //point t1;
