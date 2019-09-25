@@ -4,7 +4,7 @@
  * Task: make a structure of linked list and realise different sort algorithms
  *
  *@author Vitaliy Datsiuk
- *@version 1.3 23/09/19
+ *@version 1.4 25/09/19
  * "Header"
  */
 
@@ -15,7 +15,7 @@
 //+* TASK
 
 //Structure of the Node used in structure of the Linked List
-template <typename T>
+template <class T>
 struct Node{
     T data;
     Node* next;         //Pointer on the next element
@@ -23,15 +23,22 @@ struct Node{
 };
 
 //Structure of the Linked list
-template <typename T>
-struct  List {
+template <class T>
+class  List {
 private:
 
     Node <T> *head, *tail;                     //two pointers on the first and the last node
     int node_sum;                              //number of the nodes is list
+    T curr_type;                                //used to detect the type of data used in list
 
     //swaps the data between nodes
     void swap(Node <T> *a, Node <T> *b);
+
+    void generate_int();                //next 4 functions generates the list of the following type
+
+    void generate_double();
+
+    void generate_char();
 
     //utility function for quicksort
     Node <T>* partition_quicksort(Node <T>* start, Node <T>* finish);
@@ -61,6 +68,10 @@ public:
 
     void add_node(T val);
 
+    void generate_basic();      //functions that randomly generates the list of chosen type of data
+
+    void generate_string();
+
     //printing all the data from the list on the screen
     virtual void display(Node <T> *start);
 
@@ -89,6 +100,5 @@ public:
     void radixsort();
 
 };
-
 
 #endif //OOP_2ND_COURSE_1LAB_LINKED_LIST_H

@@ -4,7 +4,7 @@
  * Task: make a structure of linked list and realise different sort algorithms
  *
  *@author Vitaliy Datsiuk
- *@version 1.3 23/09/19
+ *@version 1.4 25/09/19
  */
 
 #include <iostream>
@@ -31,6 +31,21 @@ std::ostream& operator<< (std::ostream &out, const point &Point)
 }*/
 
 int main() {
+
+/*    string q;
+    string as;
+    int l;
+    if(typeid(q).name() == typeid(as).name())
+        cout<<"ya";
+    if(typeid(q).name() == typeid("sss").name())
+        cout<<"da";
+    if(typeid(q).name() == typeid(l).name())
+        cout<<"qa";*/
+
+    List<string> a;
+    a.generate_string();
+    a.display(a.get_head());
+    cout<<"-------"<<endl;
 
     List<int> i;
     i.add_node(42);
