@@ -12,7 +12,12 @@
 #define OOP_2ND_COURSE_1LAB_LINKED_LIST_H
 #pragma once
 
+#include <string>
+
+using namespace std;
+
 //+* TASK
+
 
 //Structure of the Node used in structure of the Linked List
 template <class T>
@@ -28,7 +33,7 @@ class  List {
 private:
 
     Node <T> *head, *tail;                     //two pointers on the first and the last node
-    int node_sum;                              //number of the nodes is list
+    int node_sum;                              //number of the nodes in list
     T curr_type;                                //used to detect the type of data used in list
 
     //swaps the data between nodes
@@ -98,6 +103,8 @@ public:
     //this sorting algorithm is valid only for the integers in [0,100)
     //uses modificated countingsort!
     void radixsort();
+
+    void find_series(string character);
 
 };
 

@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include "Linked_List.h"
+#include "Book.h"
 
 using namespace std;
 
@@ -20,6 +21,13 @@ template <class T>
             cout << "One of the nodes is empty. Nothing to swap." << endl;
             return;
         }
+
+/*
+        Book temp_book;
+        if (typeid(T).name() == typeid(temp_book).name()){
+            temp_book =
+        }
+*/
 
         T temp;
         temp = a->data;
@@ -33,6 +41,32 @@ template <class T>
         T piv_data = finish->data;      //data that pivot contain
         Node <T>* temp = start->prev;   //pointer on the place to swap the values
         Node <T>* j;                    //iterator
+
+/*        Book ex;
+        Book piv_data_book;
+        if (typeid(T).name() == typeid(ex).name()){
+            //partition part for the book
+            piv_data_book = piv_data;
+            for (j = start; j !=finish; j = j->next) {
+                ex = j->data;
+                if (ex.release_get().year <= piv_data_book.release_get().year) {
+                    if (temp == NULL)
+                        temp = start;
+                    else
+                        temp = temp->next;
+                    swap(temp, j);
+                }
+            }
+
+            //swapping the pivot
+            if (temp == NULL )
+                temp = start;
+            else
+                temp = temp->next;
+            swap (temp, j);
+
+            return temp;
+        }*/
 
         //partition part
         for (j = start; j !=finish; j = j->next) {
@@ -432,7 +466,7 @@ template <class T>
     } // int exp = 1, int max_int = 50
 
 template <class T>
-    void List<T>:: bucketsort(){
+    void List<T> :: bucketsort(){
 
         if (typeid(T).name() != typeid(int).name()){
             cout << "Sorry, your values are not integers"<<endl;    //if elements are not int
@@ -487,7 +521,7 @@ template <class T>
     }
 
 template <class T>
-    void List<T>:: radixsort(){
+    void List<T> :: radixsort(){
 
         int exp = 1;
         int max = get_max_int();
@@ -497,5 +531,35 @@ template <class T>
 
             exp = exp * 10;
         }
+    }
+
+template <class T>
+    void List <T> :: find_series(string character) {
+
+        if (character == "" ) {
+            cout << "empty character" << endl;
+            return;
+        }
+
+        Book a;
+        List <Book> series;
+        if (typeid(a).name() == typeid(T).name()) {                 //if a T is a Book type
+
+            Node<T> *start = head;
+            while (start != NULL) {
+                a = start->data;
+                if (a.find_character(character) == 1)
+                    series.add_node(a);
+                start = start->next;
+            }
+            cout<<" ";
+            series.display(series.get_head());
+            series.mergesort();
+            series.display(series.get_head());
+        } else {
+            cout << " The type of data is not a Book" << endl;
+            return;
+        }
+
     }
 

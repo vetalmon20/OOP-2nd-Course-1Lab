@@ -6,17 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.cpp
 iostream
 -
-Linked_List.h
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+Book.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
 
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
-
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp
-iostream
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
+string
 -
-Linked_List.cpp
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
+vector
+-
 
