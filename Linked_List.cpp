@@ -4,17 +4,32 @@
  * Task: make a structure of linked list and realise different sort algorithms
  *
  *@author Vitaliy Datsiuk
- *@version 1.4 25/09/19
+ *@version 1.5 30/09/19
  */
 
 #include <iostream>
 #include "Linked_List.h"
 #include "Book.h"
 
-using namespace std;
+using namespace std;;
 
 template <class T>
-    void List<T>::swap(Node <T> *a, Node <T> *b) {
+    int List <T> :: get_max_int(){
+    if (typeid(T).name() != typeid(int).name()){
+        cout << "Sorry, your values are not integers"<<endl;    //if elements are not int
+        return 0;
+    }
+    int a = head->data;                 //parcing all the list. The biggest int is saved in 'a'
+    Node <T> *start = head;
+    while (start != NULL){
+        if (a < start->data)
+            a = start->data;
+        start = start->next;
+    }
+    return a;
+}
+template <class T>
+    void List <T> :: swap(Node <T> *a, Node <T> *b) {
 
         //cathing the possible error
         if(a == NULL || b == NULL){
@@ -22,51 +37,17 @@ template <class T>
             return;
         }
 
-/*
-        Book temp_book;
-        if (typeid(T).name() == typeid(temp_book).name()){
-            temp_book =
-        }
-*/
-
         T temp;
         temp = a->data;
         a->data = b->data;
         b->data = temp;
     }
-
 template <class T>
-    Node <T>* List<T>:: partition_quicksort(Node <T>* start, Node <T>* finish){
+    Node <T>* List<T> :: partition_quicksort(Node <T> *start, Node <T> *finish){
 
         T piv_data = finish->data;      //data that pivot contain
         Node <T>* temp = start->prev;   //pointer on the place to swap the values
         Node <T>* j;                    //iterator
-
-/*        Book ex;
-        Book piv_data_book;
-        if (typeid(T).name() == typeid(ex).name()){
-            //partition part for the book
-            piv_data_book = piv_data;
-            for (j = start; j !=finish; j = j->next) {
-                ex = j->data;
-                if (ex.release_get().year <= piv_data_book.release_get().year) {
-                    if (temp == NULL)
-                        temp = start;
-                    else
-                        temp = temp->next;
-                    swap(temp, j);
-                }
-            }
-
-            //swapping the pivot
-            if (temp == NULL )
-                temp = start;
-            else
-                temp = temp->next;
-            swap (temp, j);
-
-            return temp;
-        }*/
 
         //partition part
         for (j = start; j !=finish; j = j->next) {
@@ -88,19 +69,17 @@ template <class T>
 
         return temp;
     }
-
 template <class T>
-    void List<T>:: _quicksort(Node <T>* start, Node <T>* finish){
+    void List <T> :: _quicksort(Node <T> *start, Node <T> *finish){
 
         if (finish != NULL && start != finish && start != finish->next){
-            Node <T> *pivot = partition_quicksort(start, finish);
-            _quicksort(start, pivot->prev);
-            _quicksort(pivot->next, finish);
+            Node <T> *pivot = partition_quicksort(start, finish);   //finding the place to pivot
+            _quicksort(start, pivot->prev);            //doing the same to the left part
+            _quicksort(pivot->next, finish);           //doing the same to the right part
         }
     }
-
 template <class T>
-    void List<T>:: listsplit_mergesort(Node <T> *start, Node <T> **first, Node <T> **second){
+    void List <T> :: listsplit_mergesort(Node <T> *start, Node <T> **first, Node <T> **second){
 
         //Catching the possible error
         if (start == NULL){
@@ -112,7 +91,7 @@ template <class T>
         fast = start->next;
         slow = start;
 
-        //the algorithm on dividing the list on 2
+        //the algorithm on dividing the list on two lists
         while (fast != NULL){
             fast = fast->next;
             if (fast != NULL){
@@ -125,9 +104,8 @@ template <class T>
         *second = slow->next;
         slow->next = NULL;
     }
-
 template <class T>
-    Node <T>* List<T>:: merge(Node <T> *first, Node <T> *second){
+    Node <T>* List <T> :: merge(Node <T> *first, Node <T> *second){
 
         Node <T> *result;               //pointer on the result linked
 
@@ -147,9 +125,8 @@ template <class T>
 
         return (result);
     }
-
 template <class T>
-    void List<T>::_mergesort(Node <T> **source)
+    void List <T> :: _mergesort(Node <T> **source)
     {
         Node <T> *start = *source;
         Node <T> *first;
@@ -181,55 +158,62 @@ template <class T>
         }
         tail = temp;
     }
-
 template <class T>
-    void List<T>:: fill_array_0(int in[], int length){
+    void List <T> :: fill_array_0(int in[], int length){
         for (int i = 0; i < length; i++){
             in[i] = 0;
         }
     }
+template <class T>
+    void List <T> :: generate_int() {
+
+        int length = rand() % 7 + 5;    //the length of the list
+
+        for (int i = 0; i < length; i++){
+            add_node(rand() % 49 + 1);
+        }
+    }
+template <class T>
+    void List <T> :: generate_char() {
+
+        int length = rand() % 7 + 5;    //the length of the list
+
+        for (int i = 0; i < length; i++){
+            add_node(rand() % 95 + 32);
+        }
+}
+template <class T>
+    void List <T> :: generate_double() {
+
+        int length = rand() % 7 + 5;    //the length of the list
+
+        for (int i = 0; i < length; i++){
+            add_node((float)rand() / RAND_MAX);
+        }
+}
+
 
 template <class T>
-    List<T>::List(){
+    List <T> :: List(){
 
         head = NULL;
         tail = NULL;
         node_sum = 0;
     }
-
 template <class T>
-    Node <T>* List<T>:: get_tail(){
+    Node <T>* List <T> :: get_tail(){
         return tail;
     }
-
 template <class T>
-    Node <T>* List<T>:: get_head(){
+    Node <T>* List <T> :: get_head(){
         return head;
     }
-
 template <class T>
-    int List<T>:: get_node_sum(){
+    int List <T> :: get_node_sum(){
         return node_sum;
     }
-
 template <class T>
-    int List<T>:: get_max_int(){
-        if (typeid(T).name() != typeid(int).name()){
-            cout << "Sorry, your values are not integers"<<endl;    //if elements are not int
-            return 0;
-        }
-        int a = head->data;
-        Node <T> *start = head;
-        while (start != NULL){
-            if (a < start->data)
-                a = start->data;
-            start = start->next;
-        }
-        return a;
-    }
-
-template <class T>
-    void List<T>:: add_node(T val){
+    void List <T> :: add_node(T val){
 
         Node <T> *new_node = new Node <T>;
         new_node->data = val;
@@ -247,68 +231,37 @@ template <class T>
 
         node_sum ++;                    //updated the number of the nodes
     }
-
 template <class T>
-    void List<T>:: generate_basic(){
+    void List <T> :: generate_basic(){
 
         int a;
         double b;
         char c;
 
-        if (typeid(curr_type).name() == typeid(a).name()) {
+        /*checking what is type of data of the current list and calls the suitable function*/
+
+        if (typeid(T).name() == typeid(a).name()) {
             generate_int();
             return;
         }
 
-        if (typeid(curr_type).name() == typeid(b).name()) {
+        if (typeid(T).name() == typeid(b).name()) {
             generate_double();
             return;
         }
 
-        if (typeid(curr_type).name() == typeid(c).name()) {
+        if (typeid(T).name() == typeid(c).name()) {
             generate_char();
             return;
         }
 
         cout << "there are no generating function for such type of data" << endl;
-        return;
     };
-
 template <class T>
-    void List<T>:: generate_int() {
-
-        int length = rand() % 7 + 5;    //the length of the list
-
-        for (int i = 0; i < length; i++){
-            add_node(rand() % 49 + 1);
-        }
-    }
-
-template <class T>
-    void List<T>:: generate_char() {
-
-        int length = rand() % 7 + 5;    //the length of the list
-
-        for (int i = 0; i < length; i++){
-            add_node(rand() % 95 + 32);
-        }
-    }
-
-template <class T>
-    void List<T>:: generate_double() {
-
-        int length = rand() % 7 + 5;    //the length of the list
-
-        for (int i = 0; i < length; i++){
-            add_node((float)rand() / RAND_MAX);
-        }
-}
-
-template <class T>
-    void List<T>:: generate_string() {
+    void List <T> :: generate_string() {
 
         string ex;
-    if (typeid(curr_type).name() != typeid(ex).name()) {
+    if (typeid(T).name() != typeid(ex).name()) {
         cout << "It is not a string" << endl;               //Error catching
         return;
     }
@@ -325,15 +278,14 @@ template <class T>
         for (int i = 0; i < length; i++){
            string_length = rand() % 7 + 3;
            for(int k = 0; k < string_length; k++){
-               temp.push_back(alphanum[rand() % sizeof(alphanum)]);
+               temp.push_back(alphanum[rand() % sizeof(alphanum)]); //adds a random symbol
            }
-           add_node(temp);
-           temp.erase();
+           add_node(temp);              //adding the random string to the list
+           temp.erase();                //erasing the data from the string in order to keep it clean
         }
 }
-
 template <class T>
-    void List<T>:: display(Node <T> *start){
+    void List <T> :: display(Node <T> *start){
 
         if(start != NULL)
         {
@@ -341,9 +293,8 @@ template <class T>
             display(start->next);
         }
     }
-
 template <class T>
-    void List<T>:: insertion_sort(){
+    void List <T> :: insertion_sort(){
 
         Node <T> *current_p, *insertion_p;                //creating two auxillary pointers
         current_p = insertion_p=head;                     //marking them on the head of the list
@@ -358,19 +309,16 @@ template <class T>
             insertion_p = insertion_p->next;
         }
     }
-
 template <class T>
-    void List<T>:: quicksort(){
+    void List <T> :: quicksort(){
         _quicksort(head,tail);  //calls the function
     }
-
 template <class T>
-    void List<T>:: mergesort(){
-        _mergesort(&head);
+    void List <T> :: mergesort(){
+        _mergesort(&head);          //calls the function
     }
-
 template <class T>
-    void List<T>:: selection_sort() {
+    void List <T> :: selection_sort() {
 
         Node <T> *curr = head;
 
@@ -382,6 +330,7 @@ template <class T>
         Node <T> *iterator, *min;
 
         while(curr != NULL){
+            //save the smallest val in order to place it on the start of unsorted part of the array
             min = curr;
             iterator = curr->next;
             while(iterator != NULL){
@@ -393,9 +342,8 @@ template <class T>
             curr = curr->next;
         }
     }
-
 template <class T>
-    void List<T>:: countingsort(int exp, int max_int){
+    void List <T> :: countingsort(int exp, int max_int){
 
         //exp is used to radix algorithm. If u want to use this sort in default conditions
         //the value of exp and ten must be = 1 and 50 respectively (just don't touch it)
@@ -428,7 +376,7 @@ template <class T>
         //creating the index array
         while (start != NULL){
             temp = (start->data / exp) % max_int;
-            index[temp]++;                          //incrementing the index val of the current value
+            index[temp]++;                         //incrementing the index val of the current value
             start = start->next;
         }
 
@@ -463,10 +411,9 @@ template <class T>
             start->data = out[k];
             start = start->next;
         }
-    } // int exp = 1, int max_int = 50
-
+    }
 template <class T>
-    void List<T> :: bucketsort(){
+    void List <T> :: bucketsort(){
 
         if (typeid(T).name() != typeid(int).name()){
             cout << "Sorry, your values are not integers"<<endl;    //if elements are not int
@@ -477,7 +424,7 @@ template <class T>
             return;
         }
 
-        List<int> arr[10];
+        List <int> arr[10];
         Node <T>* start = head;
         int base;                            //the basis dividing
 
@@ -519,9 +466,8 @@ template <class T>
            }
         }
     }
-
 template <class T>
-    void List<T> :: radixsort(){
+    void List <T> :: radixsort(){
 
         int exp = 1;
         int max = get_max_int();
@@ -533,33 +479,4 @@ template <class T>
         }
     }
 
-template <class T>
-    void List <T> :: find_series(string character) {
-
-        if (character == "" ) {
-            cout << "empty character" << endl;
-            return;
-        }
-
-        Book a;
-        List <Book> series;
-        if (typeid(a).name() == typeid(T).name()) {                 //if a T is a Book type
-
-            Node<T> *start = head;
-            while (start != NULL) {
-                a = start->data;
-                if (a.find_character(character) == 1)
-                    series.add_node(a);
-                start = start->next;
-            }
-            cout<<" ";
-            series.display(series.get_head());
-            series.mergesort();
-            series.display(series.get_head());
-        } else {
-            cout << " The type of data is not a Book" << endl;
-            return;
-        }
-
-    }
 

@@ -4,15 +4,16 @@
  * Task: make a structure of linked list and realise different sort algorithms
  *
  *@author Vitaliy Datsiuk
- *@version 1.4 25/09/19
+ *@version 1.5 30/09/19
  * "Header"
  */
 
 #ifndef OOP_2ND_COURSE_1LAB_LINKED_LIST_H
 #define OOP_2ND_COURSE_1LAB_LINKED_LIST_H
-#pragma once
+
 
 #include <string>
+#include "Book.h"
 
 using namespace std;
 
@@ -22,39 +23,37 @@ using namespace std;
 //Structure of the Node used in structure of the Linked List
 template <class T>
 struct Node{
-    T data;
+    T data;             //Data that can contain and type of data
     Node* next;         //Pointer on the next element
     Node* prev;         //Pointer on the previous element
 };
 
 //Structure of the Linked list
 template <class T>
-class  List {
+class List {
 private:
 
     Node <T> *head, *tail;                     //two pointers on the first and the last node
     int node_sum;                              //number of the nodes in list
-    T curr_type;                                //used to detect the type of data used in list
 
     //swaps the data between nodes
     void swap(Node <T> *a, Node <T> *b);
 
-    void generate_int();                //next 4 functions generates the list of the following type
-
+    //next 3 functions generates the list of the following type
+    void generate_int();
     void generate_double();
-
     void generate_char();
 
-    //utility function for quicksort
+    //utility function for quicksort that sorts the array relatively to the pivot(< or > than pivot)
     Node <T>* partition_quicksort(Node <T>* start, Node <T>* finish);
 
     //actually quicksort
     void _quicksort(Node <T>* start, Node <T>* finish);
 
-    //splits the list on two halves. Used in mergesort
+    //splits the list on two halves. Used in mergesort.
     void listsplit_mergesort(Node <T> *start, Node <T> **first, Node <T> **second);
 
-    //merges two lists
+    //merges two lists and returns the pointer on the head of the merged (final) list
     Node <T> *merge(Node <T> *first, Node <T> *second);
 
     //actually mergesort
@@ -73,19 +72,14 @@ public:
 
     void add_node(T val);
 
-    void generate_basic();      //functions that randomly generates the list of chosen type of data
+    void generate_basic();    //function that randomly generates the list of basic type of data
+    void generate_string();   //function that randomly generates the list of random strings
 
-    void generate_string();
+    virtual void display(Node <T> *start);    //printing all the data from the list on the screen
 
-    //printing all the data from the list on the screen
-    virtual void display(Node <T> *start);
 
-    //just calls the recursive _quicksort function in private
-    void insertion_sort();
-
-    //just calls the recursive _quicksort function in private
-    void quicksort();
-
+    void insertion_sort();//just calls the recursive _quicksort function in private
+    void quicksort(); //just calls the recursive _quicksort function in private
     void mergesort();
 
     //+* task
@@ -103,8 +97,6 @@ public:
     //this sorting algorithm is valid only for the integers in [0,100)
     //uses modificated countingsort!
     void radixsort();
-
-    void find_series(string character);
 
 };
 

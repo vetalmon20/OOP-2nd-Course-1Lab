@@ -176,6 +176,33 @@ Linked_List.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.s
 .PHONY : Linked_List.cpp.s
 
+Literature.obj: Literature.cpp.obj
+
+.PHONY : Literature.obj
+
+# target to build an object file
+Literature.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj
+.PHONY : Literature.cpp.obj
+
+Literature.i: Literature.cpp.i
+
+.PHONY : Literature.i
+
+# target to preprocess a source file
+Literature.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.i
+.PHONY : Literature.cpp.i
+
+Literature.s: Literature.cpp.s
+
+.PHONY : Literature.s
+
+# target to generate assembly for a file
+Literature.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.s
+.PHONY : Literature.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -218,6 +245,9 @@ help:
 	@echo ... Linked_List.obj
 	@echo ... Linked_List.i
 	@echo ... Linked_List.s
+	@echo ... Literature.obj
+	@echo ... Literature.i
+	@echo ... Literature.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

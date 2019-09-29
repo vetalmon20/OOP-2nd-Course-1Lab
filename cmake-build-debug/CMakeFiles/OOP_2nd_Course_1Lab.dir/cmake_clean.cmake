@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj"
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj"
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj"
+  "CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj"
   "OOP_2nd_Course_1Lab.pdb"
   "OOP_2nd_Course_1Lab.exe"
   "OOP_2nd_Course_1Lab.exe.manifest"

@@ -92,6 +92,12 @@
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h">
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.cpp">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.h">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp">
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>

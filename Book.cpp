@@ -7,11 +7,14 @@
  *      3)dividing the books on series
  *
  *@author Vitaliy Datsiuk
- *@version 1.4 25/09/19
+ *@version 1.5 30/09/19
+ *
  */
 
 #include <iostream>
 #include "Book.h"
+
+
 
 using namespace std;
 
@@ -23,6 +26,8 @@ Date :: Date() {
 
 Character :: Character() {
     nickname = "";
+    importance = 3;
+    mention = "";
 }
 
 string Character :: nickname_get() {
@@ -33,27 +38,63 @@ void Character :: nickname_set(string in) {
     nickname = in;
 }
 
-vector <int> Character :: importance_get() {
+int Character :: importance_get() {
     return importance;
 }
 
-void Character :: importance_set(vector <int> in) {
+void Character :: importance_set(int in) {
+    if (in > 3 || in <1){
+        cout << "Wrong value of importance. Now the Character is episodable(3)";
+        in = 3;
+    }
     importance = in;
 }
 
-vector <string> Character :: mentions_get() {
+string Character :: mention_get() {
+    return mention;
+}
+
+void Character :: mention_set(string in) {
+    mention = in;
+}
+
+void Character :: new_character(string _nickname, string _mention, int _importance) {
+    nickname_set(_nickname);
+    mention_set(_mention);
+    importance_set(_importance);
+}
+
+
+
+Global_Character :: Global_Character(){
+    nickname = "";
+}
+
+string Global_Character :: nickname_get() {
+    return nickname;
+}
+
+void Global_Character :: nickname_set(string in) {
+    nickname = in;
+}
+
+vector<string> Global_Character :: mentions_get() {
     return mentions;
 }
 
-void Character :: mentions_set(vector <string> in) {
-    mentions = in;
+vector<int> Global_Character :: importances_get(){
+    return importances;
 }
 
-void Character :: new_character(string nickname, vector<string> mentions, vector<int> importance) {
-    nickname_set(nickname);
-    mentions_set(mentions);
-    importance_set(importance);
+void Global_Character :: add_importance(int in) {
+    importances.push_back(in);
 }
+
+void Global_Character :: add_mention(string in) {
+    mentions.push_back(in);
+}
+
+
 
 Book :: Book() {
     name = "";
@@ -113,6 +154,7 @@ void Book :: release_set(Date in) {
     release.month = in.month;
 }
 
+
 void Book :: new_book(string name, vector <string> author, Date release, int page_num, string annotation, vector <Character> characters) {
     name_set(name);
     author_set(author);
@@ -121,24 +163,6 @@ void Book :: new_book(string name, vector <string> author, Date release, int pag
     annotation_set(annotation);
     characters_set(characters);
 }
-
-bool Book::find_character(string in) {
-
-    int length = characters.size();
-
-    for (int i = 0; i < length; i++){
-        if (characters[i].nickname_get() == in){
-            //if character is main or secondary
-            if(characters[i].importance_get()[i] == 1 || characters[i].importance_get()[i] == 2)
-                return 1;       //character is belongs to the series
-                //if it is episodable
-            if(characters[i].importance_get()[i] == 3)
-                return 0;       //character do not belongs to the series
-        }
-    }
-    return 0;               //there no such a character in the book
-}
-
 
 void Book :: display_authors() {
 
@@ -153,7 +177,7 @@ void Book :: display_characters() {
 }
 
 void Book :: display_book_full() {
-    cout << "Name: "<< name_get()<<"; Date: " << release_get().year << "/" << release_get().month;
+    cout << "Name: "<< name_get() << "; Date: " << release_get().year << "/" << release_get().month;
     cout << "/" << release_get().day << "; Pages: " << page_num_get() << "; Characters: ";
     display_characters();
     cout << "; Author(s): ";
@@ -161,20 +185,73 @@ void Book :: display_book_full() {
     cout << "; Annotation: " << annotation_get() << endl;
 }
 
+
+
+
+
+/*Overloading the operators for all my classes:*/
+
 std::ostream& operator << (std::ostream &out, const Book &in)
 {
     Book a = in;
 
-    out <<"Name:"<<a.name_get()<<" Year:"<<a.release_get().year<<" "<<endl;
+    out << "Name: " << a.name_get() << " Year:" << a.release_get().year << " " <<endl;
 
     return out;
 }
 
 bool operator <= (Book &left, Book &right){
+    if(left.release_get().year != right.release_get().year)
         return left.release_get().year <= right.release_get().year;
+    if(left.release_get().month != right.release_get().month)
+        return left.release_get().month <= right.release_get().month;
+
+    return left.release_get().day <= right.release_get().day;
 }
 
 bool operator >= (Book &left, Book &right){
+    if (left.release_get().year != right.release_get().year)
     return left.release_get().year >= right.release_get().year;
+
+    if(left.release_get().month != right.release_get().month)
+        return left.release_get().month >= right.release_get().month;
+
+    return left.release_get().day >= right.release_get().day;
+
 }
 
+std::ostream& operator << (std::ostream &out, const Character &in){
+
+    Character a = in;
+
+    out << " " << a.nickname_get() << " ";
+
+    return out;
+
+}
+
+bool operator <= (Character &left, Character &right){
+    return left.nickname_get() <= right.nickname_get();
+}
+
+bool operator >= (Character &left, Character &right){
+    return left.nickname_get() >= right.nickname_get();
+}
+
+std::ostream& operator << (std::ostream &out, const Global_Character &in){
+
+    Global_Character a = in;
+
+    out << " " << a.nickname_get() << " ";
+
+    return out;
+
+}
+
+bool operator <= (Global_Character &left, Global_Character &right){
+    return left.nickname_get() <= right.nickname_get();
+}
+
+bool operator >= (Global_Character &left, Global_Character &right){
+    return left.nickname_get() >= right.nickname_get();
+}
