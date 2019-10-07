@@ -7,7 +7,7 @@
  *      3)dividing the books on series
  *
  *@author Vitaliy Datsiuk
- *@version 1.5 30/09/19
+ *@version 2 08/10/19
  * "Header"
  */
 
@@ -28,7 +28,7 @@ public:
     int year;
     int month;
     int day;
-};                          //variables are public for the comfort access
+};             //variables are public for the comfort access
 
 
 class Character{
@@ -56,7 +56,7 @@ public:
     //creates a new character with input parametres
     void new_character(string _nickname, string _mentions,int _importance);
 
-};
+};         //Structure that saves the specific character in specific book
 
 class Global_Character{
 private:
@@ -81,7 +81,7 @@ public:
     void add_importance(int in);
     void add_mention(string in);
 
-};
+};  //Structure that contains the specific character and all it's mentions
 
 class Book {
 private:
@@ -126,7 +126,7 @@ public:
 
     //displays all the information about following book
     void display_book_full();
-};
+};             //Structure that contains the specific book
 
 
 #endif //OOP_2ND_COURSE_1LAB_BOOK_H

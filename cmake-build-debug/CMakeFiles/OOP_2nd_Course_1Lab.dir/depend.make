@@ -4,19 +4,27 @@
 CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj: ../Book.cpp
 CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj: ../Book.h
 
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj: ../Book.h
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj: ../Linked_List.cpp
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj: ../Linked_List.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj: ../Book.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj: ../Lists.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj: ../Lists.h
 
 CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj: ../Book.h
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj: ../Linked_List.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj: ../Lists.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj: ../Literature.cpp
 CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj: ../Literature.h
 
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Book.h
-CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Linked_List.cpp
-CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Linked_List.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Lists.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Lists.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Literature.cpp
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Literature.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../test.cpp
+
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../Book.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../Lists.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../Lists.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../Literature.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../Literature.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../test.cpp
 

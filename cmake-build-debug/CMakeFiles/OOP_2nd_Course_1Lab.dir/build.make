@@ -56,18 +56,18 @@ include CMakeFiles/OOP_2nd_Course_1Lab.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OOP_2nd_Course_1Lab.dir/flags.make
 
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj: CMakeFiles/OOP_2nd_Course_1Lab.dir/flags.make
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj: ../Linked_List.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj"
-	D:\programms\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OOP_2nd_Course_1Lab.dir\Linked_List.cpp.obj -c D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Linked_List.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj: CMakeFiles/OOP_2nd_Course_1Lab.dir/flags.make
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj: ../Lists.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj"
+	D:\programms\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OOP_2nd_Course_1Lab.dir\Lists.cpp.obj -c D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Lists.cpp
 
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.i"
-	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Linked_List.cpp > CMakeFiles\OOP_2nd_Course_1Lab.dir\Linked_List.cpp.i
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.i"
+	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Lists.cpp > CMakeFiles\OOP_2nd_Course_1Lab.dir\Lists.cpp.i
 
-CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.s"
-	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Linked_List.cpp -o CMakeFiles\OOP_2nd_Course_1Lab.dir\Linked_List.cpp.s
+CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.s"
+	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Lists.cpp -o CMakeFiles\OOP_2nd_Course_1Lab.dir\Lists.cpp.s
 
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: CMakeFiles/OOP_2nd_Course_1Lab.dir/flags.make
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../main.cpp
@@ -108,25 +108,40 @@ CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.s"
 	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\Literature.cpp -o CMakeFiles\OOP_2nd_Course_1Lab.dir\Literature.cpp.s
 
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: CMakeFiles/OOP_2nd_Course_1Lab.dir/flags.make
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj: ../test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj"
+	D:\programms\MinGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OOP_2nd_Course_1Lab.dir\test.cpp.obj -c D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\test.cpp
+
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.i"
+	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\test.cpp > CMakeFiles\OOP_2nd_Course_1Lab.dir\test.cpp.i
+
+CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.s"
+	D:\programms\MinGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\test.cpp -o CMakeFiles\OOP_2nd_Course_1Lab.dir\test.cpp.s
+
 # Object files for target OOP_2nd_Course_1Lab
 OOP_2nd_Course_1Lab_OBJECTS = \
-"CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj" \
+"CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj" \
 "CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj" \
 "CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj" \
-"CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj"
+"CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj" \
+"CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj"
 
 # External object files for target OOP_2nd_Course_1Lab
 OOP_2nd_Course_1Lab_EXTERNAL_OBJECTS =
 
-OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj
+OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj
+OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/build.make
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/linklibs.rsp
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/objects1.rsp
 OOP_2nd_Course_1Lab.exe: CMakeFiles/OOP_2nd_Course_1Lab.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable OOP_2nd_Course_1Lab.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable OOP_2nd_Course_1Lab.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\OOP_2nd_Course_1Lab.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

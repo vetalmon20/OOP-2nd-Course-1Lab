@@ -7,7 +7,7 @@
  *      3)dividing the books on series
  *
  *@author Vitaliy Datsiuk
- *@version 1.5 30/09/19
+ *@version 2 08/10/19
  *
  */
 

@@ -6,27 +6,21 @@
 
 #IncludeRegexTransform: 
 
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.cpp
-iostream
--
-Book.h
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
-
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
 string
 -
 vector
 -
 
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.cpp
 iostream
 -
-Linked_List.h
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+Lists.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.h
 Book.h
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
 
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.h
 string
 -
 Book.h
@@ -41,14 +35,18 @@ iostream
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.h
 Book.h
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.h
-Linked_List.h
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.h
+Lists.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.h
 
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp
+test.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/test.cpp
+
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/test.cpp
 iostream
 -
-Linked_List.cpp
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp
+Lists.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.cpp
 Literature.cpp
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.cpp
 vector

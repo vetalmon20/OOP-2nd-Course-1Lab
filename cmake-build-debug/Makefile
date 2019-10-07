@@ -149,32 +149,32 @@ Book.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.s
 .PHONY : Book.cpp.s
 
-Linked_List.obj: Linked_List.cpp.obj
+Lists.obj: Lists.cpp.obj
 
-.PHONY : Linked_List.obj
+.PHONY : Lists.obj
 
 # target to build an object file
-Linked_List.cpp.obj:
-	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj
-.PHONY : Linked_List.cpp.obj
+Lists.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj
+.PHONY : Lists.cpp.obj
 
-Linked_List.i: Linked_List.cpp.i
+Lists.i: Lists.cpp.i
 
-.PHONY : Linked_List.i
+.PHONY : Lists.i
 
 # target to preprocess a source file
-Linked_List.cpp.i:
-	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.i
-.PHONY : Linked_List.cpp.i
+Lists.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.i
+.PHONY : Lists.cpp.i
 
-Linked_List.s: Linked_List.cpp.s
+Lists.s: Lists.cpp.s
 
-.PHONY : Linked_List.s
+.PHONY : Lists.s
 
 # target to generate assembly for a file
-Linked_List.cpp.s:
-	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.s
-.PHONY : Linked_List.cpp.s
+Lists.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.s
+.PHONY : Lists.cpp.s
 
 Literature.obj: Literature.cpp.obj
 
@@ -230,6 +230,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test.obj: test.cpp.obj
+
+.PHONY : test.obj
+
+# target to build an object file
+test.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj
+.PHONY : test.cpp.obj
+
+test.i: test.cpp.i
+
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -242,15 +269,18 @@ help:
 	@echo ... Book.obj
 	@echo ... Book.i
 	@echo ... Book.s
-	@echo ... Linked_List.obj
-	@echo ... Linked_List.i
-	@echo ... Linked_List.s
+	@echo ... Lists.obj
+	@echo ... Lists.i
+	@echo ... Lists.s
 	@echo ... Literature.obj
 	@echo ... Literature.i
 	@echo ... Literature.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 

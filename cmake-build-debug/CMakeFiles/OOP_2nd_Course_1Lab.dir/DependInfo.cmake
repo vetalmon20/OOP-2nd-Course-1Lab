@@ -5,9 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Book.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Book.cpp.obj"
-  "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Linked_List.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Linked_List.cpp.obj"
+  "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Literature.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj"
+  "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/test.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/test.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
