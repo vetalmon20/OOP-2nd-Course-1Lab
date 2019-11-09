@@ -236,3 +236,29 @@ bool operator >= (Book &left, Book &right){
     return left.release_get().day >= right.release_get().day;
 
 }
+
+/**
+ * Created a book with input parameters of the user
+ */
+void Book::create_book() {
+
+    string name;
+    cout << "Enter the name of the Book:" << endl;
+    cin >> name;
+    Date release;
+    cout << "Enter the Year/Month/Day of the writing of the Book:" << endl;
+    cin >> release.year;
+    cin >> release.month;
+    cin >> release.day;
+    int page_num;
+    cout << "Enter the number of the pages:" << endl;
+    cin >> page_num;
+    string annotation;
+    cout << "Enter the annotation" << endl;
+    cin >> annotation;
+
+    name_set(name);
+    page_num_set(page_num);
+    release_set(release);
+    annotation_set(annotation);
+}

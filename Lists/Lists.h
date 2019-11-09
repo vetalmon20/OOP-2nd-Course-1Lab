@@ -48,6 +48,11 @@ public:
     virtual void add_node(T val) = 0;
 
     /**
+     * Deletes the last element of the list
+     */
+    virtual void pop_node() = 0;
+
+    /**
      * Pure virtual function that randomly generates the List of spec. data
      */
     virtual void generate() = 0;
@@ -56,7 +61,6 @@ public:
      * Pure virtual function that prints all the data from the list on the screen
      */
     virtual void display() = 0;
-
 
     /**
      * Pure virtual function that performs the insertion sort algorithm
@@ -190,16 +194,16 @@ public:
     Arr_List();
 
     /**
-     * Returns the value in the head of the list
+     * Returns the index of the head of the list
      *
-     * @return the value in the head of the list
+     * @return the index of the head of the list
      */
     int get_head();
 
     /**
-     * Returns the value in the tail of the list
+     * Returns the index of the tail of the list
      *
-     * @return the value in the tail of the list
+     * @return the index of the tail of the list
      */
     int get_tail();
 
@@ -216,6 +220,11 @@ public:
      * @param val The value that will be added to the list
      */
     void add_node(T val) override ;
+
+    /**
+     * Deletes the last element of the list
+     */
+    void pop_node() override;
 
     /**
      * Function that randomly generates the List of spec. data
@@ -390,6 +399,11 @@ public:
     void add_node(T val) override ;
 
     /**
+     * Deletes the last element of the list
+     */
+    void pop_node() override ;
+
+    /**
     * Function that randomly generates the List of spec. data
     */
     void generate() override;
@@ -450,5 +464,170 @@ public:
     void radixsort() override;
 
 };                //List based on the Linked list
+
+/**
+ * Template interface structure for the List structure that is based on the vector
+ */
+template <class T>
+struct Vector_List : IList <T> {
+    /**
+    * Function that swaps the data between indexes
+    *
+    * @param a Index a to swap
+    * @param b Index b to swap
+    */
+    void swap(int a, int b);
+
+    /**
+    * Returns the max int in the list
+    *
+    * @return the max int in the list
+    */
+    int get_max_int();
+
+    /**
+     * Utility function for countingsort that fills the input arrays with zeros
+     *
+     * @param in The input array to fill
+     * @param length The length of this array
+     */
+    void fill_array_0(int in[], int length);
+
+    /**
+     * Utility function for quicksort that sorts the array relatively to the pivot(< or > than pivot)
+     *
+     * @param start The start of the array to sort
+     * @param finish The finish of the array to sort
+     * @return the Index of the end of the sorted part of the array
+     */
+    int partition_quicksort(int start, int finish);
+
+    /**
+     * Function that performs the quicksort algorithm
+     *
+     * @param start The start of the subarray to sort
+     * @param finish The end of the subarray to sort
+     */
+    void _quicksort(int start, int finish);
+
+    /**
+     * The function that divides the array in two subarrays and then merges them into one in ascending order
+     *
+     * @param left The start of the first array
+     * @param middle The end of the first array and the start of the second array
+     * @param right The end of the second array
+     */
+    void  merge(int left, int middle, int right);
+
+    /**
+     * Function that performs the mergesort algorithm
+     *
+     * @param left The left border of the array
+     * @param right The right border of the array
+     */
+    void _mergesort(int left, int right);
+
+public:
+    vector<T> arr;
+
+    /**
+     * The default constructor
+     */
+    Vector_List();
+
+    /**
+     * Returns the index of the head of the list
+     *
+     * @return the index of the head of the list
+     */
+    int get_head();
+
+    /**
+     * Returns the index of the tail of the list
+     *
+     * @return the index of the tail of the list
+     */
+    int get_tail();
+
+    /**
+     * Returns the current size of the array
+     *
+     * @return the current size of the array
+     */
+    int get_curr_size();
+
+    /**
+     * Adds the input value to the list
+     *
+     * @param val The value that will be added to the list
+     */
+    void add_node(T val) override ;
+
+    /**
+     * Deletes the last element of the list
+     */
+    void pop_node() override ;
+
+    /**
+     * Function that randomly generates the List of spec. data
+     */
+    void generate() override ;
+
+    /**
+    * Function that prints all the data from the list on the screen
+    */
+    void display() override ;
+
+    /**
+    * Function that performs the insertion sort algorithm
+    */
+    void insertion_sort() override ;
+
+    /**
+    * Function that basically calls the _quicksort function that is in private section
+    */
+    void quicksort() override ;
+
+    /**
+    * Function that basically calls the _mergesort function that is in private section
+    */
+    void mergesort() override ;
+
+    //+* task
+    /**
+    * Function that performs the selection sort algorithm
+    */
+    void selection_sort() override ;
+
+    //+* task
+    /**
+     * Function that performs the counting sort algorithm. Uses default arguments for simple countingsort.
+     * The default values are changed in radixsort algorithm as countingsort is a part of radix sort.
+     * This sorting algorithm is valid only for the integers in [0,50)
+     *
+     * @param exp The default argument that equals 1 for the default countingsort. Contains the value that equals
+     *        10^(exp-1) in radixsort algorithm where i is number of recursive iteration
+     * @param max_int The default argument that equals 50 for the default countingsort. Means the maximum possible
+     *        value for a sorted integer
+     */
+    void countingsort(int exp = 1, int max_int = 50) override ;
+
+    //+* task
+    /**
+     * Function that performs the bucketsort algorithm.
+     * This sorting algorithm is valid only for the integers in [0,100)
+     */
+    void bucketsort() override ;
+
+    //+* task
+    /**
+     * Function that performs the radix sort algorithm.
+     * This sorting algorithm is valid only for the integers in [0,100)
+     * This algorithm uses modificated countingsort!
+     */
+    void radixsort() override ;
+};
+
+
 
 #endif //OOP_2ND_COURSE_1LAB_LISTS_H

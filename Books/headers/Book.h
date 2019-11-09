@@ -164,6 +164,11 @@ public:
     void new_book(string name, vector <string> author, Date release, int page_num, string annotation, vector <Character> characters);
 
     /**
+     * Created a book with input parameters of the user
+     */
+    void create_book();
+
+    /**
      * Displays the authors on the screen
      */
     void display_authors();

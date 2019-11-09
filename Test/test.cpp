@@ -24,10 +24,11 @@ inline void list_test_int() {
     IList<int> *ptr;
     Linked_List<int> test1;
     Arr_List<int> test2;
+    Vector_List<int> test3;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -35,12 +36,19 @@ inline void list_test_int() {
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+        if(temp == 2)
+            ptr = &test2;
+        else
+            ptr = &test3;
 
     if(temp == 1)
         cout << "Test for the Linked_List<int>" << endl;
     else
-        cout << "Test for the Array_List<int>" << endl;
+        if(temp == 2)
+            cout << "Test for the Array_List<int>" << endl;
+        else
+            cout << "Test for the Vector_List<int>" << endl;
+
     ptr->generate();
     cout << "Random array:";
     ptr->display();
@@ -96,10 +104,11 @@ inline void list_test_float(){
     IList<float> *ptr;
     Linked_List<float> test1;
     Arr_List<float> test2;
+    Vector_List<float> test3;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -107,12 +116,20 @@ inline void list_test_float(){
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+        if(temp == 2)
+             ptr = &test2;
+        else
+             ptr = &test3;
+
 
     if(temp == 1)
         cout << "Test for the Linked_List<float>" << endl;
     else
-        cout << "Test for the Array_List<float>" << endl;
+        if(temp == 2)
+            cout << "Test for the Array_List<float>" << endl;
+        else
+            cout << "Test for the Vector_List<float>" << endl;
+
     ptr->generate();
     cout << "Random array:";
     ptr->display();
@@ -150,10 +167,11 @@ inline void list_test_char(){
     IList<char> *ptr;
     Linked_List<char> test1;
     Arr_List<char> test2;
+    Vector_List<char> test3;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -161,12 +179,19 @@ inline void list_test_char(){
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+        if(temp == 2)
+            ptr = &test2;
+        else
+            ptr = &test3;
 
     if(temp == 1)
         cout << "Test for the Linked_List<char>" << endl;
     else
-        cout << "Test for the Array_List<char>" << endl;
+        if(temp == 2)
+            cout << "Test for the Array_List<char>" << endl;
+        else
+            cout << "Test for the Vector_List<char>" << endl;
+
     ptr->generate();
     cout << "Random array:";
     ptr->display();
@@ -203,10 +228,11 @@ inline void list_test_string(){
     IList<string> *ptr;
     Linked_List<string> test1;
     Arr_List<string> test2;
+    Vector_List<string> test3;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -214,12 +240,19 @@ inline void list_test_string(){
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+        if(temp == 2)
+             ptr = &test2;
+        else
+             ptr = &test3;
 
     if(temp == 1)
         cout << "Test for the Linked_List<string>" << endl;
     else
+    if(temp == 2)
         cout << "Test for the Array_List<string>" << endl;
+    else
+        cout << "Test for the Vector_List<string>" << endl;
+
     ptr->generate();
     cout << "Random array:";
     ptr->display();
@@ -254,9 +287,9 @@ inline void list_test_book(){
 
     int temp;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -289,16 +322,24 @@ inline void list_test_book(){
     IList<Book> *ptr;
     Linked_List<Book> test1;
     Arr_List<Book> test2;
+    Vector_List<Book> test3;
 
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+         if(temp == 2)
+            ptr = &test2;
+         else
+             ptr = &test3;
 
     if(temp == 1)
         cout << "Test for the Linked_List<Book>" << endl;
     else
-        cout << "Test for the Array_List<Book>" << endl;
+        if(temp == 2)
+             cout << "Test for the Array_List<Book>" << endl;
+        else
+             cout << "Test for the Vector_List<Book>" << endl;
+
     ptr->add_node(B1);
     ptr->add_node(B2);
     ptr->add_node(B3);
@@ -317,7 +358,7 @@ inline void literature_test(){
 
     int temp;
 
-    cout << "Choose the type of List: 1 - Linked List; 2- Array List" << endl;
+    cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
     if (temp != 1 && temp != 2) {
         cout << "Wrong value" << endl;
@@ -327,11 +368,15 @@ inline void literature_test(){
     Literature *ptr;
     Linked_literature test1;
     Array_literature test2;
+    //Vector_Literature test3;
 
     if (temp == 1)
         ptr = &test1;
     else
-        ptr = &test2;
+        if(temp == 2)
+             ptr = &test2;
+/*        else
+             ptr = &test3;*/
 
     if(temp == 1)
         cout << "Test for the Literature based on Linked_List" << endl;
