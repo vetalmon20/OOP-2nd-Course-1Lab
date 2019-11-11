@@ -56,6 +56,16 @@ public:
      * Virtual function that displays all of the characters on the screen
      */
     virtual void display_characters() = 0;          //displays the characters in literature
+
+    /**
+     * Virtual function that pops the last book
+     */
+    virtual void pop_book() = 0;
+
+    /**
+     * Sorts the books by data
+     */
+    virtual void sort_books() = 0;
 };                       //Interface
 
 /**
@@ -88,12 +98,22 @@ public:
     /**
     * Function that displays all of the books on the screen
     */
-    virtual void display_books() override;
+    void display_books() override;
 
     /**
     * Function that displays all of the characters on the screen
     */
-    virtual void display_characters() override;
+    void display_characters() override;
+
+    /**
+     * Pops the last book
+     */
+    void pop_book() override ;
+
+    /**
+     * Sorts the books by data
+     */
+    void sort_books() override ;
 };    //Litearature based on Array_List
 
 struct Linked_literature : Literature{
@@ -123,13 +143,70 @@ public:
     /**
     * Function that displays all of the books on the screen
     */
-    virtual void display_books() override ;
+    void display_books() override ;
 
     /**
     * Function that displays all of the characters on the screen
     */
-    virtual void display_characters() override ;
+    void display_characters() override ;
+
+    /**
+     * Pops the last book
+     */
+    void pop_book() override ;
+
+    /**
+     * Sorts the books by data
+     */
+    void sort_books() override ;
 };
 
+/**
+ * Literature structure that is based on the Vector List
+ */
+struct Vector_literature : Literature {
+public:
+    Vector_List <Global_Character> Characters;
+    Vector_List <Book> Books;
+
+    /**
+    * Adds the book to the Literature
+    *
+    * @param in Book that would be added to the Literature
+    */
+    void add_book(Book in) override ;
+
+    /**
+    * Function that generates a random List of the Books
+    */
+    void generate_Books() override ;
+
+    /**
+    * Function that finds the series for the input character
+    *
+    * @param character For this character the series would be found
+    */
+    void find_series(string character) override ;
+
+    /**
+    * Function that displays all of the books on the screen
+    */
+    void display_books() override ;
+
+    /**
+    * Function that displays all of the characters on the screen
+    */
+    void display_characters() override ;
+
+    /**
+     * Pops the last book
+     */
+    void pop_book() override ;
+
+    /**
+     * Sorts the books by data
+     */
+    void sort_books() override ;
+};
 
 #endif //OOP_2ND_COURSE_1LAB_LITERATURE_H

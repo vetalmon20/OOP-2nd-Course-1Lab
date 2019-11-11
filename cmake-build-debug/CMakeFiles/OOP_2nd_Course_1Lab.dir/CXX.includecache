@@ -68,15 +68,31 @@ Lists.cpp
 vector
 -
 
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Literature.cpp
+../Books/headers/Literature.h
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/Books/headers/Literature.h
+iostream
+-
+
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/test.cpp
+iostream
+-
+Lists.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/Lists.cpp
+../Books/sources/Literature.cpp
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Literature.cpp
+vector
+-
+
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/demo.cpp
 iostream
 -
 Literature.h
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Literature.h
-
-D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp
 test.cpp
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/test.cpp
+
+D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp
 demo.cpp
 D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/demo.cpp
 

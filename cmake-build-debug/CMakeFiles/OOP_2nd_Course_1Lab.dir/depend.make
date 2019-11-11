@@ -45,7 +45,10 @@ CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Books/headers/Character.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Books/headers/Date.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Books/headers/Global_Character.h
 CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Books/headers/Literature.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Books/sources/Literature.cpp
+CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Lists/Lists.cpp
 CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Lists/Lists.h
+CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../Test/test.cpp
 CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj: ../demo.cpp
 
 CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj: ../Books/headers/Book.h

@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include "Literature.h"
+#include "test.cpp"
 
 using namespace std;
 
@@ -33,10 +34,10 @@ inline void demo(){
     Arr_List<string> string_l1;
     Linked_List<string> string_l2;
     Vector_List<string> string_l3;
-    IList<Book> *book_ptr;
-    Arr_List<Book> book_l1;
-    Linked_List<Book> book_l2;
-    Vector_List<Book> book_l3;
+    Literature *book_ptr;
+    Array_literature book_l1;
+    Linked_literature book_l2;
+    Vector_literature book_l3;
 
 
     bool created = 0;
@@ -47,6 +48,7 @@ inline void demo(){
     cout << "3 - Delete the last element from the list" << endl;
     cout << "4 - Print the list" << endl;
     cout << "5 - Sort the list" << endl;
+    cout << "6 - View test for the type of data" << endl;
     cout << "0 - exit" << endl;
     int variant = -1;
     int type = -1;
@@ -56,8 +58,10 @@ inline void demo(){
         cin >> temp;
 
         while (1) {
-            if (temp < 1 || temp > 6)
+            if (temp < 0 || temp > 6) {
                 cout << "Wrong input. Try again" << endl;
+                cin >> temp;
+            }
             else
                 break;
         }
@@ -75,8 +79,10 @@ inline void demo(){
 
                     cin >> variant;
                     while (1) {
-                        if (variant < 1 || variant > 4)
+                        if (variant < 1 || variant > 5) {
                             cout << "Wrong input. Try again" << endl;
+                            cin >> variant;
+                        }
                         else
                             break;
                     }
@@ -88,8 +94,10 @@ inline void demo(){
 
                     cin >> type;
                     while (1) {
-                        if (type < 1 || type > 3)
+                        if (type < 1 || type > 3) {
                             cout << "Wrong input. Try again" << endl;
+                            cin >> type;
+                        }
                         else
                             break;
                     }
@@ -109,47 +117,58 @@ inline void demo(){
                             break;
                         }
                         case 2:{    //float
+                            float_l1.generate();
+                            float_l2.generate();
+                            float_l3.generate();
                             if(type == 1)
                                 float_ptr = &float_l1;
                             else
-                            if(type == 2)
-                                float_ptr = &float_l2;
-                            else
-                                float_ptr = &float_l3;
-                            float_ptr->generate();
+                                 if(type == 2)
+                                     float_ptr = &float_l2;
+                                 else
+                                     float_ptr = &float_l3;
+                            //float_ptr->generate();
                             break;
                         }
                         case 3:{    //char
+                            char_l1.generate();
+                            char_l2.generate();
+                            char_l3.generate();
                             if(type == 1)
                                 char_ptr = &char_l1;
                             else
-                            if(type == 2)
-                                char_ptr = &char_l2;
-                            else
-                                char_ptr = &char_l3;
-                            char_ptr->generate();
+                                if(type == 2)
+                                     char_ptr = &char_l2;
+                                 else
+                                     char_ptr = &char_l3;
+                            //char_ptr->generate();
                             break;
                         }
                         case 4:{    //string
+                            string_l1.generate();
+                            string_l2.generate();
+                            string_l3.generate();
                             if(type == 1)
                                 string_ptr = &string_l1;
                             else
-                            if(type == 2)
-                                string_ptr = &string_l2;
-                            else
-                                string_ptr = &string_l3;
-                            string_ptr->generate();
+                                if(type == 2)
+                                     string_ptr = &string_l2;
+                                else
+                                     string_ptr = &string_l3;
+                            //string_ptr->generate();
                             break;
                         }
                         case 5:{    //Book
+                            book_l1.generate_Books();
+                            book_l2.generate_Books();
+                            book_l3.generate_Books();
                             if(type == 1)
                                 book_ptr = &book_l1;
                             else
-                            if(type == 2)
-                                book_ptr = &book_l2;
-                            else
-                                book_ptr = &book_l3;
-                            book_ptr->generate();
+                                if(type == 2)
+                                   book_ptr = &book_l2;
+                                else
+                                   book_ptr = &book_l3;
                             break;
                         }
                     }
@@ -196,7 +215,7 @@ inline void demo(){
                         Book temp;
                         cout << "Enter the value" << endl;
                         temp.create_book();
-                        book_ptr->add_node(temp);
+                        book_ptr->add_book(temp);
                         break;
                     }
                 }
@@ -225,7 +244,7 @@ inline void demo(){
                         break;
                     }
                     case 5:{
-                        book_ptr->pop_node();
+                        book_ptr->pop_book();
                         break;
                     }
                 }
@@ -254,7 +273,7 @@ inline void demo(){
                         break;
                     }
                     case 5:{
-                        book_ptr->display();
+                        book_ptr->display_books();
                         break;
                     }
                 }
@@ -267,6 +286,7 @@ inline void demo(){
                 }
                 switch (variant){
                     case 1:{
+                        //cout<<"here";
                         int_ptr->quicksort();
                         break;
                     }
@@ -283,10 +303,60 @@ inline void demo(){
                         break;
                     }
                     case 5:{
-                        book_ptr->quicksort();
+                        book_ptr->sort_books();
+                        break;
+                    }
+                    default:{
+                        cout << "Unexpected error" << endl;
                         break;
                     }
                 }
+                break;
+            }
+            case 6:{
+                int temp_var = -1;
+
+                cout << "Choose a type of data to create a list of:" << endl;
+                cout << "1 - int" << endl;
+                cout << "2 - float" << endl;
+                cout << "3 - char" << endl;
+                cout << "4 - string" << endl;
+                cout << "5 - Books" << endl;
+
+                cin >> temp_var;
+
+                while (1) {
+                    if (temp_var < 1 || temp_var > 5) {
+                        cout << "Wrong input. Try again" << endl;
+                        cin >> temp_var;
+                    }
+                    else
+                        break;
+                }
+
+                switch(temp_var){
+                    case 1:{
+                        list_test_int();
+                        break;
+                    }
+                    case 2:{
+                        list_test_float();
+                        break;
+                    }
+                    case 3:{
+                        list_test_char();
+                        break;
+                    }
+                    case 4:{
+                        list_test_string();
+                        break;
+                    }
+                    case 5:{
+                        list_test_book();
+                        break;
+                    }
+                }
+                break;
             }
             case 0:{
                 return;
@@ -294,11 +364,5 @@ inline void demo(){
         }
         cout << "What do You want to do?" << endl;
     }
-
-
-
-/*    cout << "1 - Linked List" << endl;
-    cout << "2 - Array List" << endl;
-    cout << "3 - Vector List" << endl;*/
 
 }

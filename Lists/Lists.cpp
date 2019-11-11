@@ -1442,6 +1442,7 @@ void Vector_List<T>::add_node(T val) {
 template <>
 inline void Vector_List <int> :: generate(){
 
+    arr.clear();
 
     int length = rand() % 7 + 5;    //the length of the list
 
@@ -1455,6 +1456,7 @@ inline void Vector_List <int> :: generate(){
 */
 template <>
 inline void Vector_List<float> :: generate(){
+    arr.clear();
 
     int length = rand() % 7 + 5;    //the length of the list
 
@@ -1468,6 +1470,7 @@ inline void Vector_List<float> :: generate(){
 */
 template <>
 inline void Vector_List <char> :: generate(){
+    arr.clear();
 
     int length = rand() % 7 + 5;    //the length of the list
 
@@ -1481,6 +1484,7 @@ inline void Vector_List <char> :: generate(){
 */
 template <>
 inline void Vector_List <string> :: generate(){
+    arr.clear();
 
     char alphanum[] =
             "0123456789"

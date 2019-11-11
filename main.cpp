@@ -10,7 +10,6 @@
  */
 
 
-#include "test.cpp"
 #include "demo.cpp"
 
 using namespace std;
@@ -20,15 +19,7 @@ using namespace std;
 int main() {
 
     demo();
-    //Array_literature a;
 
-    //a.generate_Books();
-    //a.display_books();
-    //list_test_int();
-    //list_test_float();
-    //list_test_char();
-    //list_test_string();
-    //list_test_book();
 
     return 0;
 }
