@@ -360,7 +360,7 @@ inline void literature_test(){
 
     cout << "Choose the type of List: 1 - Linked List; 2 - Array List; 3 - Vector List" << endl;
     cin >> temp;
-    if (temp != 1 && temp != 2) {
+    if (temp != 1 && temp != 2 && temp != 3) {
         cout << "Wrong value" << endl;
         return;
     }
@@ -368,15 +368,15 @@ inline void literature_test(){
     Literature *ptr;
     Linked_literature test1;
     Array_literature test2;
-    //Vector_Literature test3;
+    Vector_literature test3;
 
     if (temp == 1)
         ptr = &test1;
     else
         if(temp == 2)
              ptr = &test2;
-/*        else
-             ptr = &test3;*/
+        else
+             ptr = &test3;
 
     if(temp == 1)
         cout << "Test for the Literature based on Linked_List" << endl;

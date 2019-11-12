@@ -3,7 +3,7 @@
  * Lab 1. Variant 2-10
  * Task: make a structure of linked list and realise different sort algorithms
  *
- * Purpose: the main demo function that are shown to the user
+ * Purpose: the demo function that is shown to the user
  *
  *@author Vitaliy Datsiuk
  *@version 2 05/11/19
@@ -16,6 +16,10 @@
 
 using namespace std;
 
+/**
+ * This function is the user's Interface.
+ * Here user can choose the option he wants to do
+ */
 inline void demo(){
 
     IList<int> *int_ptr;
@@ -49,6 +53,7 @@ inline void demo(){
     cout << "4 - Print the list" << endl;
     cout << "5 - Sort the list" << endl;
     cout << "6 - View test for the type of data" << endl;
+    cout << "7 - View the work of the Literature structure" << endl;
     cout << "0 - exit" << endl;
     int variant = -1;
     int type = -1;
@@ -58,7 +63,7 @@ inline void demo(){
         cin >> temp;
 
         while (1) {
-            if (temp < 0 || temp > 6) {
+            if (temp < 0 || temp > 7) {
                 cout << "Wrong input. Try again" << endl;
                 cin >> temp;
             }
@@ -356,6 +361,10 @@ inline void demo(){
                         break;
                     }
                 }
+                break;
+            }
+            case 7:{
+                literature_test();
                 break;
             }
             case 0:{
