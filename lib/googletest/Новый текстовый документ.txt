@@ -1,0 +1,5 @@
+if(BUILD_GMOCK)
+  add_subdirectory( googlemock )
+else()
+  add_subdirectory( googletest )
+endif()
