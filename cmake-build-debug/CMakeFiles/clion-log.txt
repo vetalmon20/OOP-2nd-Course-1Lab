@@ -1,4 +1,5 @@
 "D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\MyRepositories\OOP\OOP-2nd-Course-1Lab
+-- Could NOT find PythonInterp (missing: PYTHON_EXECUTABLE) 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug

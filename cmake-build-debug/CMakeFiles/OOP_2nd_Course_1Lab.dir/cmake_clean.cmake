@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Character.cpp.obj"
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Global_Character.cpp.obj"
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj"
+  "CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/gtest.cpp.obj"
   "OOP_2nd_Course_1Lab.pdb"
   "OOP_2nd_Course_1Lab.exe"
   "OOP_2nd_Course_1Lab.exe.manifest"

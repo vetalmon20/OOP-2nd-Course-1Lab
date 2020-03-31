@@ -17,6 +17,11 @@
 
 using namespace std;;
 
+template<class T>
+Node<T>::Node() {
+    next = prev = NULL;
+}
+
 /**
  * Returns the max int in the list
  *
@@ -145,6 +150,19 @@ template <class T>
         delete[] arr;
         arr = temp;
     }
+
+/*template <>
+void Arr_List <T> :: incr_size(int new_size) {
+
+    max_size = new_size;
+    T *temp = new T[new_size];
+
+    for (int i = 0; i < curr_size; i++){
+        temp[i] = arr[i];
+    }
+    delete[] arr;
+    arr = temp;
+}*/
 
 /**
 * Function that swaps the data between indexes
@@ -300,9 +318,17 @@ template <class T>
     }
 
 /**
-* Returns the value in the head of the list
+* The default destructor
+*/
+template<class T>
+    Arr_List<T>::~Arr_List() {
+        delete(arr);
+    }
+
+/**
+* Returns the index of the head of the list
 *
-* @return the value in the head of the list
+* @return the index of the head of the list
 */
 template <class T>
     int Arr_List <T> :: get_head() {
@@ -310,9 +336,9 @@ template <class T>
 }
 
 /**
- * Returns the value in the tail of the list
+ * Returns the index of the tail of the list
  *
- * @return the value in the tail of the list
+ * @return the index of the tail of the list
  */
 template <class T>
     int Arr_List <T> :: get_tail() {
@@ -327,6 +353,16 @@ template <class T>
 template<class T>
     int Arr_List <T> :: get_curr_size() {
         return curr_size;
+    }
+
+/**
+ * Returns the maximum size of the array
+ *
+ * @return the maximum size of the array
+ */
+template<class T>
+    int Arr_List <T> ::get_max_size() {
+        return max_size;
     }
 
 /**
@@ -588,6 +624,7 @@ void Arr_List<T>::pop_node() {
     if (curr_size == 0)
         return;
     curr_size = curr_size - 1;
+
 }
 
 /**
@@ -927,6 +964,24 @@ template <class T>
     }
 
 /**
+* Default destructor
+*/
+/*template<class T>
+    Linked_List<T>::~Linked_List() {
+        if(head == NULL)
+            return;
+        Node<T> *temp = head;
+        Node<T> *curr = temp;
+        while(temp != tail){
+            temp = temp->next;
+            delete(curr);
+            curr = temp;
+        }
+        delete(tail);
+    }*/
+
+
+/**
 * Returns the pointer on the tail of the list
 *
 * @return the pointer on the tail of the list
@@ -1220,9 +1275,12 @@ template <class T>
 
 template<class T>
 void Linked_List<T>::pop_node() {
+    if(tail == NULL)
+        return;
     Node<T>* temp = tail;
     tail = tail->prev;
     tail->next = NULL;
+    node_sum--;
     delete temp;
 }
 
@@ -1400,6 +1458,14 @@ template<class T>
 Vector_List<T>::Vector_List() {
     arr.clear();
 }
+
+/**
+ * The default destructor
+ */
+/*template<class T>
+Vector_List<T>::~Vector_List() {
+    arr.clear();
+}*/
 
 /**
  * Returns the index of the head of the list
@@ -1763,6 +1829,8 @@ void Vector_List <T> :: radixsort() {
  */
 template<class T>
 void Vector_List<T>::pop_node() {
+    if(arr.size() == 0)
+        return;
     arr.pop_back();
 }
 

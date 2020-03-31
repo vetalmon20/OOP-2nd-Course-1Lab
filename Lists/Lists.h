@@ -31,6 +31,11 @@ struct Node{
     T data;             //Data that can contain and type of data
     Node* next;         //Pointer on the next element
     Node* prev;         //Pointer on the previous element
+
+    /**
+     * Dafault constructor
+     */
+    Node();
 };
 
 /**
@@ -49,6 +54,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     virtual void pop_node() = 0;
 
@@ -194,6 +201,11 @@ public:
     Arr_List();
 
     /**
+     * The default destructor
+     */
+    ~Arr_List();
+
+    /**
      * Returns the index of the head of the list
      *
      * @return the index of the head of the list
@@ -215,6 +227,13 @@ public:
     int get_curr_size();
 
     /**
+     * Returns the maximum size of the array
+     *
+     * @return the maximum size of the array
+     */
+    int get_max_size();
+
+    /**
      * Adds the input value to the list
      *
      * @param val The value that will be added to the list
@@ -223,6 +242,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override;
 
@@ -371,6 +392,11 @@ public:
     Linked_List();
 
     /**
+    * Default destructor
+    */
+    /*~Linked_List();*/
+
+    /**
     * Returns the pointer on the tail of the list
     *
     * @return the pointer on the tail of the list
@@ -400,6 +426,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override ;
 
@@ -536,6 +564,11 @@ public:
     Vector_List();
 
     /**
+     * The default destructor
+     */
+/*    ~Vector_List();*/
+
+    /**
      * Returns the index of the head of the list
      *
      * @return the index of the head of the list
@@ -565,6 +598,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override ;
 

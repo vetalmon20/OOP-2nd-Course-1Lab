@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Global_Character.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Global_Character.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Literature.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Literature.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists/Lists.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists/Lists.cpp.obj"
+  "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/gtest.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/gtest.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/test.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/test.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/demo.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/demo.cpp.obj"
   "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp" "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab.dir/main.cpp.obj"
@@ -22,10 +23,13 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../Test"
   "../Books/headers"
   "../Books/sources"
+  "../lib/googletest/googletest/include"
+  "../lib/googletest/googletest"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -9,17 +9,19 @@
  *@version 2 08/10/19
  */
 
-
 #include "demo.cpp"
+#include <gtest/gtest.h>
 
-using namespace std;
+
+
 
 //Here you can use the test functions in order to test the program whatever You like
 
-int main() {
+int main(int argc, char* argv[]) {
 
-    demo();
+    testing::InitGoogleTest(&argc, argv);
 
+    //demo();
 
-    return 0;
+    return RUN_ALL_TESTS();
 }
