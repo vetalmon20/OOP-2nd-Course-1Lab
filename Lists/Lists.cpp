@@ -322,7 +322,7 @@ template <class T>
 */
 template<class T>
     Arr_List<T>::~Arr_List() {
-        delete(arr);
+       // delete(arr);
     }
 
 /**

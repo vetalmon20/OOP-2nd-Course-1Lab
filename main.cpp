@@ -14,14 +14,15 @@
 
 
 
-
 //Here you can use the test functions in order to test the program whatever You like
 
 int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
 
-    //demo();
+    demo();
 
     return RUN_ALL_TESTS();
+    //cout << "locale is ";
+    //return 0;
 }

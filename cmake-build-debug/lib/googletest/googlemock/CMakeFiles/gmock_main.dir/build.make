@@ -33,10 +33,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
