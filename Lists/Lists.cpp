@@ -19,8 +19,14 @@ using namespace std;;
 
 template<class T>
 Node<T>::Node() {
-    next = prev = NULL;
+    next = prev = nullptr;
 }
+
+template <class T>
+    int Arr_List <T> :: get_max_int(){
+        cout << "You cannot use this sort for this type of data" << endl;
+        return 0;
+    }
 
 /**
  * Returns the max int in the list
@@ -98,7 +104,7 @@ template <>
         curr_size = 0;
         max_size = 1;
 
-    char alphanum[] =
+        char alphanum[] =
                 "0123456789"
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 "abcdefghijklmnopqrstuvwxyz";
@@ -150,19 +156,6 @@ template <class T>
         delete[] arr;
         arr = temp;
     }
-
-/*template <>
-void Arr_List <T> :: incr_size(int new_size) {
-
-    max_size = new_size;
-    T *temp = new T[new_size];
-
-    for (int i = 0; i < curr_size; i++){
-        temp[i] = arr[i];
-    }
-    delete[] arr;
-    arr = temp;
-}*/
 
 /**
 * Function that swaps the data between indexes
@@ -474,7 +467,7 @@ template <class T>
 template <>
     inline void Arr_List<int> :: countingsort(int exp, int max_int) {
             //exp is used to radix algorithm. If u want to use this sort in default conditions
-            //the value of exp and ten must be = 1 and 50 respectively (just don't touch it)
+            //the value of exp and max_int must be = 1 and 50 respectively (just don't touch it)
 
             //I use "49" as maximum possible value to the given integer
 
@@ -576,7 +569,7 @@ template <>
 
         //used to determine the first not empty list
         for (int l = 0; l < 10; l++){
-            if (temparr[l].get_head() != NULL){
+            if (temparr[l].get_head() != nullptr){
                 n = l;
                 head = temparr[l].get_head();
                 tail = temparr[l].get_tail();
@@ -592,7 +585,7 @@ template <>
 
         //concatenating the lists in one
         for (int k = n + 1; k < 10; k++){
-            if (temparr[k].get_head() != NULL){
+            if (temparr[k].get_head() != nullptr){
                 tail->next = temparr[k].get_head();
                 tail = temparr[k].get_tail();
             }
@@ -601,7 +594,7 @@ template <>
         //rewriting the sorted list in our array
         Node<int> *iter = head;
         int k = 0;
-        while (iter != NULL){
+        while (iter != nullptr){
             arr[k] = iter->data;
             iter = iter->next;
             k++;
@@ -653,8 +646,8 @@ template <>
 template <>
     inline void Linked_List <int> :: generate(){
 
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
     node_sum = 0;
 
     int length = rand() % 7 + 5;    //the length of the list
@@ -670,8 +663,8 @@ template <>
 template <>
     inline void Linked_List <float> :: generate(){
 
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
     node_sum = 0;
 
     int length = rand() % 7 + 5;    //the length of the list
@@ -687,8 +680,8 @@ template <>
 template <>
     inline void Linked_List <char> :: generate(){
 
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
     node_sum = 0;
 
     int length = rand() % 7 + 5;    //the length of the list
@@ -704,8 +697,8 @@ template <>
 template <>
     inline void Linked_List <string> :: generate(){
 
-    head = NULL;
-    tail = NULL;
+    head = nullptr;
+    tail = nullptr;
     node_sum = 0;
 
     char alphanum[] =
@@ -756,7 +749,7 @@ template <class T>
     }
     int a = head->data;                 //parcing all the list. The biggest int is saved in 'a'
     Node <T> *start = head;
-    while (start != NULL){
+    while (start != nullptr){
         if (a < start->data)
             a = start->data;
         start = start->next;
@@ -774,7 +767,7 @@ template <class T>
     void Linked_List <T> :: swap(Node <T> *a, Node <T> *b) {
 
         //cathing the possible error
-        if(a == NULL || b == NULL){
+        if(a == nullptr || b == nullptr){
             cout << "One of the nodes is empty. Nothing to swap." << endl;
             return;
         }
@@ -802,7 +795,7 @@ template <class T>
         //partition part
         for (j = start; j !=finish; j = j->next) {
             if (j->data <= piv_data) {
-                if (temp == NULL)
+                if (temp == nullptr)
                     temp = start;
                 else
                     temp = temp->next;
@@ -811,7 +804,7 @@ template <class T>
         }
 
         //swapping the pivot
-        if (temp == NULL )
+        if (temp == nullptr )
             temp = start;
         else
             temp = temp->next;
@@ -829,7 +822,7 @@ template <class T>
 template <class T>
     void Linked_List <T> :: _quicksort(Node <T> *start, Node <T> *finish){
 
-        if (finish != NULL && start != finish && start != finish->next){
+        if (finish != nullptr && start != finish && start != finish->next){
             Node <T> *pivot = partition_quicksort(start, finish);   //finding the place to pivot
             _quicksort(start, pivot->prev);            //doing the same to the left part
             _quicksort(pivot->next, finish);           //doing the same to the right part
@@ -848,7 +841,7 @@ template <class T>
     void Linked_List <T> :: listsplit_mergesort(Node <T> *start, Node <T> **first, Node <T> **second){
 
         //Catching the possible error
-        if (start == NULL){
+        if (start == nullptr){
             cout<<"Unexpected error."<<endl;
             return;
         }
@@ -858,9 +851,9 @@ template <class T>
         slow = start;
 
         //the algorithm on dividing the list on two lists
-        while (fast != NULL){
+        while (fast != nullptr){
             fast = fast->next;
-            if (fast != NULL){
+            if (fast != nullptr){
                 slow = slow->next;
                 fast = fast->next;
             }
@@ -868,7 +861,7 @@ template <class T>
 
         *first = start;
         *second = slow->next;
-        slow->next = NULL;
+        slow->next = nullptr;
     }
 
 /**
@@ -883,9 +876,9 @@ template <class T>
 
         Node <T> *result;               //pointer on the result linked
 
-        if (first == NULL)              //basic cases
+        if (first == nullptr)              //basic cases
             return second;
-        if (second == NULL)
+        if (second == nullptr)
             return first;
 
         if (first->data <= second->data) {          //standard merge
@@ -913,7 +906,7 @@ template <class T>
         Node <T> *second;
 
         //Basic case
-        if (start == NULL || start->next == NULL) {
+        if (start == nullptr || start->next == nullptr) {
             return;
         }
 
@@ -931,9 +924,9 @@ template <class T>
         //updating the head and the tail
         Node <T> *temp;
         temp = head;
-        if (temp == NULL)
+        if (temp == nullptr)
             return;
-        while (temp->next != NULL){
+        while (temp->next != nullptr){
             temp = temp->next;
         }
         tail = temp;
@@ -958,28 +951,10 @@ template <class T>
 template <class T>
     Linked_List <T> :: Linked_List(){
 
-        head = NULL;
-        tail = NULL;
+        head = nullptr;
+        tail = nullptr;
         node_sum = 0;
     }
-
-/**
-* Default destructor
-*/
-/*template<class T>
-    Linked_List<T>::~Linked_List() {
-        if(head == NULL)
-            return;
-        Node<T> *temp = head;
-        Node<T> *curr = temp;
-        while(temp != tail){
-            temp = temp->next;
-            delete(curr);
-            curr = temp;
-        }
-        delete(tail);
-    }*/
-
 
 /**
 * Returns the pointer on the tail of the list
@@ -1021,10 +996,10 @@ template <class T>
 
         Node <T> *new_node = new Node <T>;
         new_node->data = val;
-        new_node->next = NULL;
-        new_node->prev = NULL;
+        new_node->next = nullptr;
+        new_node->prev = nullptr;
 
-        if (head == NULL){
+        if (head == nullptr){
             head = new_node;
             tail = new_node;
         } else {
@@ -1043,7 +1018,7 @@ template <class T>
     void Linked_List <T> :: display(){
 
         Node<T> *temp = head;
-        while(temp != NULL)
+        while(temp != nullptr)
         {
             cout << temp->data << " ";
             temp = temp->next;
@@ -1060,9 +1035,9 @@ template <class T>
         Node <T> *current_p, *insertion_p;                //creating two auxillary pointers
         current_p = insertion_p = head;                     //marking them on the head of the list
 
-        while (current_p != NULL || insertion_p != NULL){ //if both pointer in the end - finish
+        while (current_p != nullptr || insertion_p != nullptr){ //if both pointer in the end - finish
             current_p = insertion_p->next;
-            while (current_p != NULL){
+            while (current_p != nullptr){
                 if (current_p->data <= insertion_p->data)
                     swap(current_p, insertion_p);
                 current_p = current_p->next;
@@ -1095,18 +1070,18 @@ template <class T>
 
         Node <T> *curr = head;
 
-        if (curr == NULL || curr->next == NULL){
+        if (curr == nullptr || curr->next == nullptr){
             cout << "Nothing to sort" << endl;
             return;
         }
 
         Node <T> *iterator, *min;
 
-        while(curr != NULL){
+        while(curr != nullptr){
             //save the smallest val in order to place it on the start of unsorted part of the array
             min = curr;
             iterator = curr->next;
-            while(iterator != NULL){
+            while(iterator != nullptr){
                 if(iterator->data <= min->data)
                     min = iterator;
                 iterator = iterator->next;
@@ -1163,7 +1138,7 @@ template <>
         int temp;
 
         //creating the index array
-        while (start != NULL){
+        while (start != nullptr){
             temp = (start->data / exp) % max_int;
             index[temp]++;                         //incrementing the index val of the current value
             start = start->next;
@@ -1178,7 +1153,7 @@ template <>
         if (max_int == 10){
             start = tail;
            // for (int s = num - 1; s >= 0; s--){
-           while (start != NULL){
+           while (start != nullptr){
                 temp = start->data;
                 out[index[(temp / exp) % max_int] - 1] = temp;
                 index[(temp / exp) % max_int]--;
@@ -1186,7 +1161,7 @@ template <>
             }
         } else {
             start = head;
-            while (start != NULL) {
+            while (start != nullptr) {
                 temp = start->data;
                 out[index[(temp / exp) % max_int] - 1] = temp;
                 index[(temp / exp) % max_int]--;
@@ -1227,7 +1202,7 @@ template <>
         int base;                            //the basis dividing
 
         //determine the index of the integer to put in
-        while (start != NULL){
+        while (start != nullptr){
             base = start->data / 10;
             arr[base].add_node(start->data);
             start = start->next;
@@ -1242,7 +1217,7 @@ template <>
 
         //used to determine the first not empty list
         for (int l = 0; l < 10; l++){
-            if (arr[l].get_head() != NULL){
+            if (arr[l].get_head() != nullptr){
                 n = l;
                 head = arr[l].get_head();
                 tail = arr[l].get_tail();
@@ -1258,7 +1233,7 @@ template <>
 
         //concatenating the lists in one
         for (int k = n + 1; k < 10; k++){
-           if (arr[k].get_head() != NULL){
+           if (arr[k].get_head() != nullptr){
                tail->next = arr[k].get_head();
                tail = arr[k].get_tail();
            }
@@ -1275,11 +1250,11 @@ template <class T>
 
 template<class T>
 void Linked_List<T>::pop_node() {
-    if(tail == NULL)
+    if(tail == nullptr)
         return;
     Node<T>* temp = tail;
     tail = tail->prev;
-    tail->next = NULL;
+    tail->next = nullptr;
     node_sum--;
     delete temp;
 }
@@ -1784,7 +1759,7 @@ inline void Vector_List<int>::bucketsort() {
 
     //used to determine the first not empty list
     for (int l = 0; l < 10; l++){
-        if (temparr[l].get_head() != NULL){
+        if (temparr[l].get_head() != nullptr){
             n = l;
             head = temparr[l].get_head();
             tail = temparr[l].get_tail();
@@ -1800,7 +1775,7 @@ inline void Vector_List<int>::bucketsort() {
 
     //concatenating the lists in one
     for (int k = n + 1; k < 10; k++){
-        if (temparr[k].get_head() != NULL){
+        if (temparr[k].get_head() != nullptr){
             tail->next = temparr[k].get_head();
             tail = temparr[k].get_tail();
         }
@@ -1809,7 +1784,7 @@ inline void Vector_List<int>::bucketsort() {
     //rewriting the sorted list in our array
     Node<int> *iter = head;
     int k = 0;
-    while (iter != NULL){
+    while (iter != nullptr){
         arr[k] = iter->data;
         iter = iter->next;
         k++;

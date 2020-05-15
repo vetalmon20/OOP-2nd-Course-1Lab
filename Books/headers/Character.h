@@ -27,28 +27,6 @@ private:
     string nickname;
     string mention;
     int importance;                //1- main; 2- secondary; 3 - episodable
-
-    /**
-     * Sets the nickname
-     *
-     * @param in input string that would be the future nickname
-     */
-    void nickname_set(string in);
-
-    /**
-    * Sets the mentins
-    *
-    * @param in input string that would be the future mention
-    */
-    void mention_set(string in);
-
-    /**
-    * Sets the importance
-    *
-    * @param in input int that would be the future importance
-    */
-    void importance_set(int in);
-
 public:
     /**
     * Default constructor
@@ -83,6 +61,27 @@ public:
     friend bool operator >= (Character &left, Character &right);
 
     /**
+     * Sets the nickname
+     *
+     * @param in input string that would be the future nickname
+     */
+    void nickname_set(string in);
+
+    /**
+    * Sets the mentins
+    *
+    * @param in input string that would be the future mention
+    */
+    void mention_set(string in);
+
+    /**
+    * Sets the importance
+    *
+    * @param in input int that would be the future importance
+    */
+    void importance_set(int in);
+
+    /**
      * Returns the nickname
      *
      * @return nickname
@@ -102,7 +101,6 @@ public:
     * @return importance
     */
     int importance_get();
-
     /**
      * Creates an object of Character with the input parameters
      *
@@ -111,7 +109,6 @@ public:
      * @param _importance input int that would be the future importance
      */
     void new_character(string _nickname, string _mentions,int _importance);
-
 };
 
 

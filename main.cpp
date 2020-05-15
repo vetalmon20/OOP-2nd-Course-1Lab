@@ -20,7 +20,10 @@ int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
 
-    demo();
+    //demo();
+    Arr_List<int> a;
+    a.generate();
+    a.display();
 
     return RUN_ALL_TESTS();
     //cout << "locale is ";

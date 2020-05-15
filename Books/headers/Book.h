@@ -33,6 +33,11 @@ private:
     int page_num;
     string annotation;
     vector <Character> characters;
+public:
+    /**
+     * Default constructor
+     */
+    Book();
 
     /**
      * Sets the author
@@ -68,12 +73,6 @@ private:
     * @param in input string that would be the future characters vector
     */
     void characters_set(vector <Character> in);
-
-public:
-    /**
-     * Default constructor
-     */
-    Book();
 
     /**
      * Returns the name
@@ -152,18 +151,6 @@ public:
     friend bool operator >= (Book &left, Book &right);
 
     /**
-     * Creates an object of Book with the input parameters
-     *
-     * @param name input string that would be the future name
-     * @param author input vector of string that would be the future author
-     * @param release input Date that would be the future release
-     * @param page_num input int that would be the future page_num
-     * @param annotation input string that would be the future annotation
-     * @param characters input vector of Characters that would be the future characters
-     */
-    void new_book(string name, vector <string> author, Date release, int page_num, string annotation, vector <Character> characters);
-
-    /**
      * Created a book with input parameters of the user
      */
     void create_book();
@@ -182,6 +169,18 @@ public:
      * Displays the full information of the book on the screen
      */
     void display_book_full();
+    /**
+     * Creates an object of Book with the input parameters
+     *
+     * @param name input string that would be the future name
+     * @param author input vector of string that would be the future author
+     * @param release input Date that would be the future release
+     * @param page_num input int that would be the future page_num
+     * @param annotation input string that would be the future annotation
+     * @param characters input vector of Characters that would be the future characters
+     */
+    void new_book(string name, vector <string> author, Date release, int page_num, string annotation, vector <Character> characters);
+
 };
 
 
