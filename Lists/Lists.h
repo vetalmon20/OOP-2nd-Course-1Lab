@@ -65,9 +65,19 @@ public:
     virtual void generate() = 0;
 
     /**
+      * Pure virtual function returns the current size of the list
+      */
+    virtual int get_curr_size() = 0;
+
+    /**
      * Pure virtual function that prints all the data from the list on the screen
      */
     virtual void display() = 0;
+
+    /**
+     * Pure virtual function that get the data by index
+     */
+    virtual T get_by_index(int index) = 0;
 
     /**
      * Pure virtual function that performs the insertion sort algorithm
@@ -117,6 +127,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     virtual void radixsort() = 0;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+    virtual T &operator[](int i) = 0;
 };                                   //Interface
 
 /**
@@ -204,6 +221,11 @@ public:
      * The default destructor
      */
     ~Arr_List();
+
+    /**
+     * Function that get the data by index
+     */
+    T get_by_index(int index) override;
 
     /**
      * Returns the index of the head of the list
@@ -305,6 +327,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     void radixsort() override ;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };                   //List based on the array
 
 /**
@@ -392,9 +421,9 @@ public:
     Linked_List();
 
     /**
-    * Default destructor
-    */
-    /*~Linked_List();*/
+     * Function that get the data by index
+     */
+    T get_by_index(int index) override;
 
     /**
     * Returns the pointer on the tail of the list
@@ -435,6 +464,11 @@ public:
     * Function that randomly generates the List of spec. data
     */
     void generate() override;
+
+    /**
+      * Function returns the current size of the list
+      */
+    int get_curr_size() override;
 
     /**
     * Function that prints all the data from the list on the screen
@@ -491,6 +525,12 @@ public:
      */
     void radixsort() override;
 
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };                //List based on the Linked list
 
 /**
@@ -564,9 +604,9 @@ public:
     Vector_List();
 
     /**
-     * The default destructor
+     * Function that get the data by index
      */
-/*    ~Vector_List();*/
+    T get_by_index(int index) override;
 
     /**
      * Returns the index of the head of the list
@@ -661,6 +701,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     void radixsort() override ;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };
 
 

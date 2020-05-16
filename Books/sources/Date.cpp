@@ -22,3 +22,14 @@ Date :: Date() {
     month = 0;
     day = 0;
 }
+
+std::string Date::to_str()
+{
+    std::string output;
+    output = std::to_string(day);
+    output += '.';
+    output += std::to_string(month);
+    output += '.';
+    output += std::to_string(year);
+    return output;
+}

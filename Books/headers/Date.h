@@ -15,6 +15,7 @@
 #ifndef OOP_2ND_COURSE_1LAB_DATE_H
 #define OOP_2ND_COURSE_1LAB_DATE_H
 
+#include <iostream>
 
 /**
  * This structure used to show and save the Date. Used in Book structure. Variables are public for the comfort access.
@@ -29,6 +30,8 @@ public:
     int year;
     int month;
     int day;
+
+    std::string to_str();
 };
 
 #endif //OOP_2ND_COURSE_1LAB_DATE_H

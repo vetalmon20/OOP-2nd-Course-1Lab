@@ -11,8 +11,9 @@
 
 #include "demo.cpp"
 #include <gtest/gtest.h>
-
-
+#include <QtWidgets/QApplication>
+#include "mainwindow.h"
+#include "Lists.h"
 
 //Here you can use the test functions in order to test the program whatever You like
 
@@ -20,12 +21,22 @@ int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
 
-    //demo();
-    Arr_List<int> a;
-    a.generate();
-    a.display();
+    QApplication app(argc, argv);
+    mainwindow *window = new mainwindow;
 
-    return RUN_ALL_TESTS();
-    //cout << "locale is ";
-    //return 0;
+    window->show();
+    app.exec();
+
+   // Linked_List<float> temp;
+  //  temp.generate();
+   // temp.display();
+   // cout << temp[3];
+
+    //demo();
+    // Arr_List<int> a;
+    // a.generate();
+    //a.display();
+
+   // return RUN_ALL_TESTS();
+    return 0;
 }

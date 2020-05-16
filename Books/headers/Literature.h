@@ -66,6 +66,11 @@ public:
      * Sorts the books by data
      */
     virtual void sort_books() = 0;
+
+    /**
+     * Returns the current number of the Books in the Literature
+     */
+    virtual int get_curr_size() = 0;
 };                       //Interface
 
 /**

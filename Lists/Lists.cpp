@@ -315,8 +315,17 @@ template <class T>
 */
 template<class T>
     Arr_List<T>::~Arr_List() {
-       // delete(arr);
+        // delete(arr);
     }
+
+/**
+ * Function that get the data by index
+*/
+template<class T>
+T Arr_List<T>::get_by_index(int index)
+{
+    return arr[index];
+}
 
 /**
 * Returns the index of the head of the list
@@ -638,6 +647,17 @@ template <>
         }
     }
 
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+    template<class T>
+    T &Arr_List<T>::operator[](int i)
+    {
+        return this->arr[i];
+    }
+
 
 
 /**
@@ -734,6 +754,20 @@ template <>
 template <>
     inline void Linked_List <Global_Character> :: generate(){
         cout << "for generating Books pls use the Literature structure" << endl;
+    }
+/**
+* Function returns the current size of the list
+*/
+template<class T>
+    int Linked_List<T>::get_curr_size()
+    {
+        Node<T>* temp = this->head;
+        int size = 0;
+        while(temp !=  nullptr){
+            size++;
+            temp = temp->next;
+        }
+        return size;
     }
 
 /**
@@ -954,6 +988,18 @@ template <class T>
         head = nullptr;
         tail = nullptr;
         node_sum = 0;
+    }
+
+    template<class T>
+    T Linked_List<T>::get_by_index(int index)
+    {
+
+        Node<T>* temp = this->head;
+        for(int i = 0; i < index; i++){
+            temp = temp->next;
+            cout <<"here";
+        }
+        return temp->data;
     }
 
 /**
@@ -1277,6 +1323,16 @@ template <>
         }
     }
 
+    template<class T>
+    T &Linked_List<T>::operator[](int i)
+    {
+        Node<T>* temp = this->head;
+        for(int j = 0; j < i; j++){
+            temp = temp->next;
+        }
+        return temp->data;
+    }
+
 /**
 * Function that swaps the data between indexes
 *
@@ -1434,13 +1490,11 @@ Vector_List<T>::Vector_List() {
     arr.clear();
 }
 
-/**
- * The default destructor
- */
-/*template<class T>
-Vector_List<T>::~Vector_List() {
-    arr.clear();
-}*/
+template<class T>
+T Vector_List<T>::get_by_index(int index)
+{
+    return this->arr[index];
+}
 
 /**
  * Returns the index of the head of the list
@@ -1571,6 +1625,7 @@ void Vector_List<T>::display() {
         cout << arr[i] << " ";
     cout << endl;
 }
+
 
 /**
 * Function that performs the insertion sort algorithm
@@ -1826,4 +1881,10 @@ inline void Vector_List<int>::radixsort() {
 
         exp = exp * 10;
     }
+}
+
+template<class T>
+T &Vector_List<T>::operator[](int i)
+{
+    return arr[i];
 }
