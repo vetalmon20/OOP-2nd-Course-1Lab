@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
     app.exec();
 
    // Linked_List<float> temp;
-  //  temp.generate();
+   // temp.generate();
    // temp.display();
    // cout << temp[3];
 
@@ -37,6 +37,6 @@ int main(int argc, char* argv[]) {
     // a.generate();
     //a.display();
 
-   // return RUN_ALL_TESTS();
-    return 0;
+    return RUN_ALL_TESTS();
+    //return 0;
 }

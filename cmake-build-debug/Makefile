@@ -169,6 +169,19 @@ OOP_2nd_Course_1Lab/fast:
 .PHONY : OOP_2nd_Course_1Lab/fast
 
 #=============================================================================
+# Target rules for targets named OOP_2nd_Course_1Lab_autogen
+
+# Build rule for target.
+OOP_2nd_Course_1Lab_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 OOP_2nd_Course_1Lab_autogen
+.PHONY : OOP_2nd_Course_1Lab_autogen
+
+# fast build rule for target.
+OOP_2nd_Course_1Lab_autogen/fast:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab_autogen.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab_autogen.dir/build
+.PHONY : OOP_2nd_Course_1Lab_autogen/fast
+
+#=============================================================================
 # Target rules for targets named gmock_main
 
 # Build rule for target.
@@ -355,6 +368,87 @@ Books/sources/Literature.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Literature.cpp.s
 .PHONY : Books/sources/Literature.cpp.s
 
+GUI/addbook.obj: GUI/addbook.cpp.obj
+
+.PHONY : GUI/addbook.obj
+
+# target to build an object file
+GUI/addbook.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.obj
+.PHONY : GUI/addbook.cpp.obj
+
+GUI/addbook.i: GUI/addbook.cpp.i
+
+.PHONY : GUI/addbook.i
+
+# target to preprocess a source file
+GUI/addbook.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.i
+.PHONY : GUI/addbook.cpp.i
+
+GUI/addbook.s: GUI/addbook.cpp.s
+
+.PHONY : GUI/addbook.s
+
+# target to generate assembly for a file
+GUI/addbook.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.s
+.PHONY : GUI/addbook.cpp.s
+
+GUI/addvalue.obj: GUI/addvalue.cpp.obj
+
+.PHONY : GUI/addvalue.obj
+
+# target to build an object file
+GUI/addvalue.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.obj
+.PHONY : GUI/addvalue.cpp.obj
+
+GUI/addvalue.i: GUI/addvalue.cpp.i
+
+.PHONY : GUI/addvalue.i
+
+# target to preprocess a source file
+GUI/addvalue.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.i
+.PHONY : GUI/addvalue.cpp.i
+
+GUI/addvalue.s: GUI/addvalue.cpp.s
+
+.PHONY : GUI/addvalue.s
+
+# target to generate assembly for a file
+GUI/addvalue.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.s
+.PHONY : GUI/addvalue.cpp.s
+
+GUI/mainwindow.obj: GUI/mainwindow.cpp.obj
+
+.PHONY : GUI/mainwindow.obj
+
+# target to build an object file
+GUI/mainwindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.obj
+.PHONY : GUI/mainwindow.cpp.obj
+
+GUI/mainwindow.i: GUI/mainwindow.cpp.i
+
+.PHONY : GUI/mainwindow.i
+
+# target to preprocess a source file
+GUI/mainwindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.i
+.PHONY : GUI/mainwindow.cpp.i
+
+GUI/mainwindow.s: GUI/mainwindow.cpp.s
+
+.PHONY : GUI/mainwindow.s
+
+# target to generate assembly for a file
+GUI/mainwindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.s
+.PHONY : GUI/mainwindow.cpp.s
+
 Lists/Lists.obj: Lists/Lists.cpp.obj
 
 .PHONY : Lists/Lists.obj
@@ -381,6 +475,33 @@ Lists/Lists.s: Lists/Lists.cpp.s
 Lists/Lists.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists/Lists.cpp.s
 .PHONY : Lists/Lists.cpp.s
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj
+
+# target to build an object file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.i: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.s: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
 
 Test/gtest.obj: Test/gtest.cpp.obj
 
@@ -503,6 +624,7 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... list_install_components
+	@echo ... OOP_2nd_Course_1Lab_autogen
 	@echo ... gmock_main
 	@echo ... gmock
 	@echo ... gtest
@@ -522,9 +644,21 @@ help:
 	@echo ... Books/sources/Literature.obj
 	@echo ... Books/sources/Literature.i
 	@echo ... Books/sources/Literature.s
+	@echo ... GUI/addbook.obj
+	@echo ... GUI/addbook.i
+	@echo ... GUI/addbook.s
+	@echo ... GUI/addvalue.obj
+	@echo ... GUI/addvalue.i
+	@echo ... GUI/addvalue.s
+	@echo ... GUI/mainwindow.obj
+	@echo ... GUI/mainwindow.i
+	@echo ... GUI/mainwindow.s
 	@echo ... Lists/Lists.obj
 	@echo ... Lists/Lists.i
 	@echo ... Lists/Lists.s
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.i
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.s
 	@echo ... Test/gtest.obj
 	@echo ... Test/gtest.i
 	@echo ... Test/gtest.s

@@ -1299,6 +1299,13 @@ void Linked_List<T>::pop_node() {
     if(tail == nullptr)
         return;
     Node<T>* temp = tail;
+    if(tail->prev == nullptr){
+        tail = nullptr;
+        head = nullptr;
+        delete  temp;
+        node_sum --;
+        return;
+    }
     tail = tail->prev;
     tail->next = nullptr;
     node_sum--;

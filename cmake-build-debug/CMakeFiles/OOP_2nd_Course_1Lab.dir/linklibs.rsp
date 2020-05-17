@@ -1,1 +1,1 @@
-lib/libgtestd.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+lib/libgtestd.a D:/programms/Qt/5.12.5/mingw73_64/lib/libQt5Widgetsd.a D:/programms/Qt/5.12.5/mingw73_64/lib/libQt5Guid.a D:/programms/Qt/5.12.5/mingw73_64/lib/libQt5Cored.a -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

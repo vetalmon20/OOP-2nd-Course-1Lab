@@ -33,6 +33,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeInitializeConfigs.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeLanguageInformation.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakePackageConfigHelpers.cmake"
+  "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeParseArguments.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeRCInformation.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeSystemSpecificInformation.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -55,6 +56,35 @@ set(CMAKE_MAKEFILE_DEPENDS
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/Platform/WindowsPaths.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/ProcessorCount.cmake"
   "D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/WriteBasicConfigVersionFile.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake"
+  "D:/programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake"
   )
 
 # The corresponding makefile is:
@@ -65,6 +95,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/OOP_2nd_Course_1Lab_autogen.dir/AutogenInfo.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/googletest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -74,6 +105,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/OOP_2nd_Course_1Lab.dir/DependInfo.cmake"
+  "CMakeFiles/OOP_2nd_Course_1Lab_autogen.dir/DependInfo.cmake"
   "lib/googletest/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "lib/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
   "lib/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"

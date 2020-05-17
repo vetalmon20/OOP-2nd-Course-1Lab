@@ -27,9 +27,9 @@ std::string Date::to_str()
 {
     std::string output;
     output = std::to_string(day);
-    output += '.';
+    output += '/';
     output += std::to_string(month);
-    output += '.';
+    output += '/';
     output += std::to_string(year);
     return output;
 }

@@ -5,7 +5,7 @@
 		<Option title="OOP_2nd_Course_1Lab"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\googletest\;CMake Files\lib\googletest\googlemock\;CMake Files\lib\googletest\googlemock\cmake\;CMake Files\lib\googletest\googletest\;CMake Files\lib\googletest\googletest\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\programms\;CMake Files\..\..\..\programms\Qt\;CMake Files\..\..\..\programms\Qt\5.12.5\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\;CMake Files\lib\;CMake Files\lib\googletest\;CMake Files\lib\googletest\googlemock\;CMake Files\lib\googletest\googlemock\cmake\;CMake Files\lib\googletest\googletest\;CMake Files\lib\googletest\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug"/>
@@ -34,11 +34,22 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/OOP_2nd_Course_1Lab_autogen/include"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test"/>
+					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest/include"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtWidgets"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtGui"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtCore"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/./mkspecs/win32-g++"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtANGLE"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest"/>
 					<Add directory="D:/programms/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/programms/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
@@ -61,11 +72,22 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/OOP_2nd_Course_1Lab_autogen/include"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test"/>
+					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest/include"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtWidgets"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtGui"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtCore"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/./mkspecs/win32-g++"/>
+					<Add directory="D:/programms/Qt/5.12.5/mingw73_64/include/QtANGLE"/>
 					<Add directory="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest"/>
 					<Add directory="D:/programms/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="D:/programms/MinGW/mingw32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
@@ -126,6 +148,16 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="OOP_2nd_Course_1Lab_autogen">
+				<Option working_dir="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 OOP_2nd_Course_1Lab_autogen"/>
 					<CompileFile command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="D:/programms/MinGW/mingw32/bin/mingw32-make.exe -f &quot;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -354,6 +386,33 @@
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Literature.cpp">
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addbook.cpp">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addbook.h">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addbook.ui">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addvalue.cpp">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addvalue.h">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addvalue.ui">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/mainwindow.cpp">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/mainwindow.h">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/mainwindow.ui">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists/Lists.cpp">
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>
@@ -364,6 +423,9 @@
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/test.cpp">
+			<Option target="OOP_2nd_Course_1Lab"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp">
 			<Option target="OOP_2nd_Course_1Lab"/>
 		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/demo.cpp">
@@ -386,6 +448,93 @@
 		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QVirtualKeyboardPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/../../../programms/Qt/5.12.5/mingw73_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\programms\Qt\5.12.5\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
 		<Unit filename="D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\lib\googletest\"/>
