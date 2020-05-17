@@ -38,10 +38,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = "D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -55,10 +55,46 @@ CMAKE_BINARY_DIR = D:\MyRepositories\OOP\OOP-2nd-Course-1Lab\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,13 +105,23 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\programms\CLion\CLion 2019.2.1\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:\programms\CLion\CLion2019\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -121,6 +167,71 @@ OOP_2nd_Course_1Lab: cmake_check_build_system
 OOP_2nd_Course_1Lab/fast:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/build
 .PHONY : OOP_2nd_Course_1Lab/fast
+
+#=============================================================================
+# Target rules for targets named OOP_2nd_Course_1Lab_autogen
+
+# Build rule for target.
+OOP_2nd_Course_1Lab_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 OOP_2nd_Course_1Lab_autogen
+.PHONY : OOP_2nd_Course_1Lab_autogen
+
+# fast build rule for target.
+OOP_2nd_Course_1Lab_autogen/fast:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab_autogen.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab_autogen.dir/build
+.PHONY : OOP_2nd_Course_1Lab_autogen/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib\googletest\googlemock\CMakeFiles\gmock_main.dir\build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib\googletest\googlemock\CMakeFiles\gmock.dir\build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib\googletest\googletest\CMakeFiles\gtest.dir\build.make lib/googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib\googletest\googletest\CMakeFiles\gtest_main.dir\build.make lib/googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 Books/sources/Book.obj: Books/sources/Book.cpp.obj
 
@@ -257,6 +368,87 @@ Books/sources/Literature.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Books/sources/Literature.cpp.s
 .PHONY : Books/sources/Literature.cpp.s
 
+GUI/addbook.obj: GUI/addbook.cpp.obj
+
+.PHONY : GUI/addbook.obj
+
+# target to build an object file
+GUI/addbook.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.obj
+.PHONY : GUI/addbook.cpp.obj
+
+GUI/addbook.i: GUI/addbook.cpp.i
+
+.PHONY : GUI/addbook.i
+
+# target to preprocess a source file
+GUI/addbook.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.i
+.PHONY : GUI/addbook.cpp.i
+
+GUI/addbook.s: GUI/addbook.cpp.s
+
+.PHONY : GUI/addbook.s
+
+# target to generate assembly for a file
+GUI/addbook.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addbook.cpp.s
+.PHONY : GUI/addbook.cpp.s
+
+GUI/addvalue.obj: GUI/addvalue.cpp.obj
+
+.PHONY : GUI/addvalue.obj
+
+# target to build an object file
+GUI/addvalue.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.obj
+.PHONY : GUI/addvalue.cpp.obj
+
+GUI/addvalue.i: GUI/addvalue.cpp.i
+
+.PHONY : GUI/addvalue.i
+
+# target to preprocess a source file
+GUI/addvalue.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.i
+.PHONY : GUI/addvalue.cpp.i
+
+GUI/addvalue.s: GUI/addvalue.cpp.s
+
+.PHONY : GUI/addvalue.s
+
+# target to generate assembly for a file
+GUI/addvalue.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/addvalue.cpp.s
+.PHONY : GUI/addvalue.cpp.s
+
+GUI/mainwindow.obj: GUI/mainwindow.cpp.obj
+
+.PHONY : GUI/mainwindow.obj
+
+# target to build an object file
+GUI/mainwindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.obj
+.PHONY : GUI/mainwindow.cpp.obj
+
+GUI/mainwindow.i: GUI/mainwindow.cpp.i
+
+.PHONY : GUI/mainwindow.i
+
+# target to preprocess a source file
+GUI/mainwindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.i
+.PHONY : GUI/mainwindow.cpp.i
+
+GUI/mainwindow.s: GUI/mainwindow.cpp.s
+
+.PHONY : GUI/mainwindow.s
+
+# target to generate assembly for a file
+GUI/mainwindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/GUI/mainwindow.cpp.s
+.PHONY : GUI/mainwindow.cpp.s
+
 Lists/Lists.obj: Lists/Lists.cpp.obj
 
 .PHONY : Lists/Lists.obj
@@ -283,6 +475,60 @@ Lists/Lists.s: Lists/Lists.cpp.s
 Lists/Lists.cpp.s:
 	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Lists/Lists.cpp.s
 .PHONY : Lists/Lists.cpp.s
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj
+
+# target to build an object file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.obj
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.i: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.i
+
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.s: OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
+
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
+.PHONY : OOP_2nd_Course_1Lab_autogen/mocs_compilation.cpp.s
+
+Test/gtest.obj: Test/gtest.cpp.obj
+
+.PHONY : Test/gtest.obj
+
+# target to build an object file
+Test/gtest.cpp.obj:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/gtest.cpp.obj
+.PHONY : Test/gtest.cpp.obj
+
+Test/gtest.i: Test/gtest.cpp.i
+
+.PHONY : Test/gtest.i
+
+# target to preprocess a source file
+Test/gtest.cpp.i:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/gtest.cpp.i
+.PHONY : Test/gtest.cpp.i
+
+Test/gtest.s: Test/gtest.cpp.s
+
+.PHONY : Test/gtest.s
+
+# target to generate assembly for a file
+Test/gtest.cpp.s:
+	$(MAKE) -f CMakeFiles\OOP_2nd_Course_1Lab.dir\build.make CMakeFiles/OOP_2nd_Course_1Lab.dir/Test/gtest.cpp.s
+.PHONY : Test/gtest.cpp.s
 
 Test/test.obj: Test/test.cpp.obj
 
@@ -371,9 +617,18 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
+	@echo ... install/strip
 	@echo ... OOP_2nd_Course_1Lab
+	@echo ... install/local
+	@echo ... install
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... list_install_components
+	@echo ... OOP_2nd_Course_1Lab_autogen
+	@echo ... gmock_main
+	@echo ... gmock
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... Books/sources/Book.obj
 	@echo ... Books/sources/Book.i
 	@echo ... Books/sources/Book.s
@@ -389,9 +644,24 @@ help:
 	@echo ... Books/sources/Literature.obj
 	@echo ... Books/sources/Literature.i
 	@echo ... Books/sources/Literature.s
+	@echo ... GUI/addbook.obj
+	@echo ... GUI/addbook.i
+	@echo ... GUI/addbook.s
+	@echo ... GUI/addvalue.obj
+	@echo ... GUI/addvalue.i
+	@echo ... GUI/addvalue.s
+	@echo ... GUI/mainwindow.obj
+	@echo ... GUI/mainwindow.i
+	@echo ... GUI/mainwindow.s
 	@echo ... Lists/Lists.obj
 	@echo ... Lists/Lists.i
 	@echo ... Lists/Lists.s
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.obj
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.i
+	@echo ... OOP_2nd_Course_1Lab_autogen/mocs_compilation.s
+	@echo ... Test/gtest.obj
+	@echo ... Test/gtest.i
+	@echo ... Test/gtest.s
 	@echo ... Test/test.obj
 	@echo ... Test/test.i
 	@echo ... Test/test.s

@@ -4,7 +4,7 @@
 # compile CXX with D:/programms/MinGW/mingw32/bin/g++.exe
 CXX_FLAGS = -g   -std=gnu++14
 
-CXX_DEFINES = 
+CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
 
 CXX_INCLUDES = @CMakeFiles/OOP_2nd_Course_1Lab.dir/includes_CXX.rsp
 

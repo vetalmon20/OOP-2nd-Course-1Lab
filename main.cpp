@@ -9,17 +9,34 @@
  *@version 2 08/10/19
  */
 
-
 #include "demo.cpp"
-
-using namespace std;
+#include <gtest/gtest.h>
+#include <QtWidgets/QApplication>
+#include "mainwindow.h"
+#include "Lists.h"
 
 //Here you can use the test functions in order to test the program whatever You like
 
-int main() {
+int main(int argc, char* argv[]) {
 
-    demo();
+    testing::InitGoogleTest(&argc, argv);
 
+    QApplication app(argc, argv);
+    mainwindow *window = new mainwindow;
 
-    return 0;
+    window->show();
+    app.exec();
+
+   // Linked_List<float> temp;
+   // temp.generate();
+   // temp.display();
+   // cout << temp[3];
+
+    //demo();
+    // Arr_List<int> a;
+    // a.generate();
+    //a.display();
+
+    return RUN_ALL_TESTS();
+    //return 0;
 }

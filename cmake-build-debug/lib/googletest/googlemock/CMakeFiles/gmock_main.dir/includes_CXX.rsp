@@ -1,0 +1,1 @@
+-isystem D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googlemock/include -isystem D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googlemock -isystem D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest/include -isystem D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest 

@@ -134,11 +134,11 @@ inline void Array_literature :: generate_Books(){
 *
 * @param character For this character the series would be found
 */
-inline void Array_literature  :: find_series(string character) {
+inline string Array_literature  :: find_series(string character) {
 
     if (character == "") {
         cout << "empty character" << endl;
-        return;
+        return "the wrong input character";
     }
 
     Arr_List<Book> series;                      //the output series
@@ -168,12 +168,19 @@ inline void Array_literature  :: find_series(string character) {
     }
     if (series.get_curr_size() == 0){
         cout << "No series for this character" << endl;
-        return;
+        return "No series for this character";
     }
     series.mergesort();
     cout << endl << "series for the: " << character << ":" << endl;
 
     series.display();
+
+    string output_series;
+    for(int i = 0; i < series.get_curr_size(); i++){
+        output_series += series[i].name_get();
+        output_series += "; ";
+    }
+    return output_series;
 }
 
 /**
@@ -202,6 +209,16 @@ inline void Array_literature::pop_book() {
  */
 inline void Array_literature::sort_books() {
     Books.quicksort();
+}
+
+inline int Array_literature::get_curr_size()
+{
+    return Books.get_curr_size();
+}
+
+inline Book &Array_literature::operator[](int i)
+{
+    return Books[i];
 }
 
 
@@ -254,7 +271,7 @@ inline void Linked_literature :: generate_Books(){
     string character_names[] = {"Batman", "Superman", "Hloria", "Megamen", "Spiderman", "Venom", "Atlant",
                                 "Ronn", "Harry", "Germiona", "Ronaldo", "Gray", "Watson"};
 
-    string authors_names[] = {"Wilson D.", "Malkoy A.", "Manny M.", "Melnychuk. J", "Walter D.", "Qiuao S",
+    string authors_names[] = {"Wilson D.", "Malkoy A.", "Manny M.", "Melnychuk. J.", "Walter D.", "Qiuao S.",
                               "Greenwood K.", "Shevchenko T."};
 
     vector <string> authors;             //authors of the book
@@ -313,11 +330,11 @@ inline void Linked_literature :: generate_Books(){
 *
 * @param character For this character the series would be found
 */
-inline void Linked_literature  :: find_series(string character) {
+inline string Linked_literature  :: find_series(string character) {
 
     if (character == "") {
         cout << "empty character" << endl;
-        return;
+        return "the wrong input character";
     }
 
     Linked_List<Book> series;
@@ -341,7 +358,7 @@ inline void Linked_literature  :: find_series(string character) {
     }
     if (series.get_head() == NULL){
         cout << "No series for this character" << endl;
-        return;
+        return "No series for this character";
     }
     series.mergesort();
     cout << endl << "series for the: " << character << ":" << endl;
@@ -351,6 +368,13 @@ inline void Linked_literature  :: find_series(string character) {
         cout<<temp->data;
         temp = temp->next;
     }
+
+    string output_series;
+    for(int i = 0; i < series.get_curr_size(); i++){
+        output_series += series[i].name_get();
+        output_series += "; ";
+    }
+    return output_series;
 }
 
 /**
@@ -379,6 +403,16 @@ inline void Linked_literature::pop_book() {
  */
 inline void Linked_literature::sort_books() {
     Books.quicksort();
+}
+
+inline int Linked_literature::get_curr_size()
+{
+    return Books.get_curr_size();
+}
+
+inline Book &Linked_literature::operator[](int i)
+{
+    return Books[i];
 }
 
 /**
@@ -491,12 +525,12 @@ inline void Vector_literature::generate_Books() {
 *
 * @param character For this character the series would be found
 */
-inline void Vector_literature::find_series(string character) {
+inline string Vector_literature::find_series(string character) {
 
 
     if (character == "") {
         cout << "empty character" << endl;
-        return;
+        return "the wrong input character";
     }
 
     Arr_List<Book> series;                      //the output series
@@ -526,12 +560,19 @@ inline void Vector_literature::find_series(string character) {
     }
     if (series.get_curr_size() == 0){
         cout << "No series for this character" << endl;
-        return;
+        return "No series for this character";
     }
     series.mergesort();
     cout << endl << "series for the: " << character << ":" << endl;
 
     series.display();
+
+    string output_series;
+    for(int i = 0; i < series.get_curr_size(); i++){
+        output_series += series[i].name_get();
+        output_series += "; ";
+    }
+    return output_series;
 }
 
 /**
@@ -560,4 +601,14 @@ inline void Vector_literature::pop_book() {
  */
 inline void Vector_literature::sort_books() {
     Books.quicksort();
+}
+
+inline int Vector_literature::get_curr_size()
+{
+    return Books.get_curr_size();
+}
+
+inline Book &Vector_literature::operator[](int i)
+{
+    return Books[i];
 }

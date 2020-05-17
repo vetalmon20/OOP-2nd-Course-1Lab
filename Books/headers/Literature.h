@@ -45,7 +45,7 @@ public:
      *
      * @param character For this character the series would be found
      */
-    virtual void find_series(string character) = 0; //finds the series for the character
+    virtual string find_series(string character) = 0; //finds the series for the character
 
     /**
      * Virtual function that displays all of the books on the screen
@@ -66,6 +66,18 @@ public:
      * Sorts the books by data
      */
     virtual void sort_books() = 0;
+
+    /**
+     * Returns the current number of the Books in the Literature
+     */
+    virtual int get_curr_size() = 0;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+    virtual Book &operator[](int i) = 0;
 };                       //Interface
 
 /**
@@ -93,7 +105,7 @@ public:
     *
     * @param character For this character the series would be found
     */
-    void find_series(string character) override ;
+    string find_series(string character) override ;
 
     /**
     * Function that displays all of the books on the screen
@@ -114,6 +126,18 @@ public:
      * Sorts the books by data
      */
     void sort_books() override ;
+
+    /**
+     * Returns the current number of the Books in the Literature
+     */
+    int get_curr_size() override;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     Book &operator[](int i) override;
 };    //Litearature based on Array_List
 
 struct Linked_literature : Literature{
@@ -138,7 +162,7 @@ public:
     *
     * @param character For this character the series would be found
     */
-    void find_series(string character) override ;
+    string find_series(string character) override ;
 
     /**
     * Function that displays all of the books on the screen
@@ -159,6 +183,18 @@ public:
      * Sorts the books by data
      */
     void sort_books() override ;
+
+    /**
+     * Returns the current number of the Books in the Literature
+     */
+    int get_curr_size() override;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     Book &operator[](int i) override;
 };
 
 /**
@@ -186,7 +222,7 @@ public:
     *
     * @param character For this character the series would be found
     */
-    void find_series(string character) override ;
+    string find_series(string character) override ;
 
     /**
     * Function that displays all of the books on the screen
@@ -207,6 +243,18 @@ public:
      * Sorts the books by data
      */
     void sort_books() override ;
+
+    /**
+     * Returns the current number of the Books in the Literature
+     */
+    int get_curr_size() override;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     Book &operator[](int i) override;
 };
 
 #endif //OOP_2ND_COURSE_1LAB_LITERATURE_H

@@ -31,6 +31,11 @@ struct Node{
     T data;             //Data that can contain and type of data
     Node* next;         //Pointer on the next element
     Node* prev;         //Pointer on the previous element
+
+    /**
+     * Dafault constructor
+     */
+    Node();
 };
 
 /**
@@ -49,6 +54,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     virtual void pop_node() = 0;
 
@@ -58,9 +65,19 @@ public:
     virtual void generate() = 0;
 
     /**
+      * Pure virtual function returns the current size of the list
+      */
+    virtual int get_curr_size() = 0;
+
+    /**
      * Pure virtual function that prints all the data from the list on the screen
      */
     virtual void display() = 0;
+
+    /**
+     * Pure virtual function that get the data by index
+     */
+    virtual T get_by_index(int index) = 0;
 
     /**
      * Pure virtual function that performs the insertion sort algorithm
@@ -110,6 +127,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     virtual void radixsort() = 0;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+    virtual T &operator[](int i) = 0;
 };                                   //Interface
 
 /**
@@ -194,6 +218,16 @@ public:
     Arr_List();
 
     /**
+     * The default destructor
+     */
+    ~Arr_List();
+
+    /**
+     * Function that get the data by index
+     */
+    T get_by_index(int index) override;
+
+    /**
      * Returns the index of the head of the list
      *
      * @return the index of the head of the list
@@ -215,6 +249,13 @@ public:
     int get_curr_size();
 
     /**
+     * Returns the maximum size of the array
+     *
+     * @return the maximum size of the array
+     */
+    int get_max_size();
+
+    /**
      * Adds the input value to the list
      *
      * @param val The value that will be added to the list
@@ -223,6 +264,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override;
 
@@ -284,6 +327,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     void radixsort() override ;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };                   //List based on the array
 
 /**
@@ -371,6 +421,11 @@ public:
     Linked_List();
 
     /**
+     * Function that get the data by index
+     */
+    T get_by_index(int index) override;
+
+    /**
     * Returns the pointer on the tail of the list
     *
     * @return the pointer on the tail of the list
@@ -400,6 +455,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override ;
 
@@ -407,6 +464,11 @@ public:
     * Function that randomly generates the List of spec. data
     */
     void generate() override;
+
+    /**
+      * Function returns the current size of the list
+      */
+    int get_curr_size() override;
 
     /**
     * Function that prints all the data from the list on the screen
@@ -463,6 +525,12 @@ public:
      */
     void radixsort() override;
 
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };                //List based on the Linked list
 
 /**
@@ -536,6 +604,11 @@ public:
     Vector_List();
 
     /**
+     * Function that get the data by index
+     */
+    T get_by_index(int index) override;
+
+    /**
      * Returns the index of the head of the list
      *
      * @return the index of the head of the list
@@ -565,6 +638,8 @@ public:
 
     /**
      * Deletes the last element of the list
+     *
+     * @return the element in the tail of the list
      */
     void pop_node() override ;
 
@@ -626,6 +701,13 @@ public:
      * This algorithm uses modificated countingsort!
      */
     void radixsort() override ;
+
+    /**
+     * operator [] gets the element of the input index
+     * @param i input index
+     * @return the element of the input index
+     */
+     T &operator[](int i) override;
 };
 
 

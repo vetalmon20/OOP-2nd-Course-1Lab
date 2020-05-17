@@ -1,0 +1,35 @@
+# Meta
+set(AM_MULTI_CONFIG "FALSE")
+set(AM_PARALLEL "4")
+set(AM_VERBOSITY "")
+# Directories
+set(AM_CMAKE_SOURCE_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab")
+set(AM_CMAKE_BINARY_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug")
+set(AM_CMAKE_CURRENT_SOURCE_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab")
+set(AM_CMAKE_CURRENT_BINARY_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug")
+set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
+set(AM_BUILD_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/OOP_2nd_Course_1Lab_autogen")
+set(AM_INCLUDE_DIR "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/OOP_2nd_Course_1Lab_autogen/include")
+# Files
+set(AM_SOURCES "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Book.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Character.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Date.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Global_Character.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources/Literature.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addbook.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addvalue.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/mainwindow.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists/Lists.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/gtest.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test/test.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/demo.cpp;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/main.cpp")
+set(AM_HEADERS "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers/Book.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers/Character.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers/Date.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers/Global_Character.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers/Literature.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addbook.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/addvalue.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI/mainwindow.h;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists/Lists.h")
+set(AM_SETTINGS_FILE "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/cmake-build-debug/CMakeFiles/OOP_2nd_Course_1Lab_autogen.dir/AutogenOldSettings.txt")
+# Qt
+set(AM_QT_VERSION_MAJOR 5)
+set(AM_QT_MOC_EXECUTABLE "D:/programms/Qt/5.12.5/mingw73_64/bin/moc.exe")
+set(AM_QT_UIC_EXECUTABLE "D:/programms/Qt/5.12.5/mingw73_64/bin/uic.exe")
+# MOC settings
+set(AM_MOC_SKIP "")
+set(AM_MOC_DEFINITIONS "QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB")
+set(AM_MOC_INCLUDES "D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Lists;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Test;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/GUI;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/headers;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Books/sources;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest/include;D:/programms/Qt/5.12.5/mingw73_64/include;D:/programms/Qt/5.12.5/mingw73_64/include/QtWidgets;D:/programms/Qt/5.12.5/mingw73_64/include/QtGui;D:/programms/Qt/5.12.5/mingw73_64/include/QtCore;D:/programms/Qt/5.12.5/mingw73_64/./mkspecs/win32-g++;D:/programms/Qt/5.12.5/mingw73_64/include/QtANGLE;D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/lib/googletest/googletest;D:/programms/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++;D:/programms/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32;D:/programms/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward;D:/programms/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include;D:/programms/MinGW/mingw32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed;D:/programms/MinGW/mingw32/i686-w64-mingw32/include")
+set(AM_MOC_OPTIONS "")
+set(AM_MOC_RELAXED_MODE "")
+set(AM_MOC_MACRO_NAMES "Q_OBJECT;Q_GADGET;Q_NAMESPACE")
+set(AM_MOC_DEPEND_FILTERS "")
+set(AM_MOC_PREDEFS_CMD "D:/programms/MinGW/mingw32/bin/g++.exe;-dM;-E;-c;D:/programms/CLion/CLion2019/bin/cmake/win/share/cmake-3.14/Modules/CMakeCXXCompilerABI.cpp")
+# UIC settings
+set(AM_UIC_SKIP "")
+set(AM_UIC_TARGET_OPTIONS "")
+set(AM_UIC_OPTIONS_FILES "")
+set(AM_UIC_OPTIONS_OPTIONS "")
+set(AM_UIC_SEARCH_PATHS "")
