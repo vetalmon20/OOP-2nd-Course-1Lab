@@ -60,7 +60,7 @@ public:
     /**
      * Virtual function that pops the last book
      */
-    virtual void pop_book() = 0;
+    virtual bool pop_book() = 0;
 
     /**
      * Sorts the books by data
@@ -120,7 +120,7 @@ public:
     /**
      * Pops the last book
      */
-    void pop_book() override ;
+    bool pop_book() override ;
 
     /**
      * Sorts the books by data
@@ -177,7 +177,7 @@ public:
     /**
      * Pops the last book
      */
-    void pop_book() override ;
+    bool pop_book() override ;
 
     /**
      * Sorts the books by data
@@ -237,7 +237,7 @@ public:
     /**
      * Pops the last book
      */
-    void pop_book() override ;
+    bool pop_book() override ;
 
     /**
      * Sorts the books by data

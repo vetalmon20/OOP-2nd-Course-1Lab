@@ -53,7 +53,7 @@ template <>
         curr_size = 0;
         max_size = 1;
 
-        int length = rand() % 7 + 5;    //the length of the list
+        int length = 1000;    //the length of the list
 
         for (int i = 0; i < length; i++){
             add_node(rand() % 49 + 1);
@@ -70,7 +70,7 @@ template <>
         curr_size = 0;
         max_size = 1;
 
-        int length = rand() % 7 + 5;    //the length of the list
+        int length = 1000;    //the length of the list
 
         for (int i = 0; i < length; i++){
             add_node((float)rand() / RAND_MAX);
@@ -87,7 +87,7 @@ template <>
         curr_size = 0;
         max_size = 1;
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
         for (int i = 0; i < length; i++){
             add_node(rand() % 95 + 32);
@@ -109,7 +109,7 @@ template <>
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                 "abcdefghijklmnopqrstuvwxyz";
 
-        int length = rand() % 7 + 5;    //the length of the list
+        int length = 1000;    //the length of the list
         int string_length;              //the length of the string
         string temp;                    //temporary string that will be in the list
 
@@ -622,10 +622,11 @@ template <class T>
 * Deletes the last element of the list
 */
 template<class T>
-void Arr_List<T>::pop_node() {
+bool Arr_List<T>::pop_node() {
     if (curr_size == 0)
-        return;
+        return 0;
     curr_size = curr_size - 1;
+    return 1;
 
 }
 
@@ -670,7 +671,7 @@ template <>
     tail = nullptr;
     node_sum = 0;
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node(rand() % 49 + 1);
@@ -687,7 +688,7 @@ template <>
     tail = nullptr;
     node_sum = 0;
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node((float)rand() / RAND_MAX);
@@ -704,7 +705,7 @@ template <>
     tail = nullptr;
     node_sum = 0;
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node(rand() % 95 + 32);
@@ -726,7 +727,7 @@ template <>
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz";
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
     int string_length;              //the length of the string
     string temp;                    //temporary string that will be in the list
 
@@ -761,13 +762,7 @@ template <>
 template<class T>
     int Linked_List<T>::get_curr_size()
     {
-        Node<T>* temp = this->head;
-        int size = 0;
-        while(temp !=  nullptr){
-            size++;
-            temp = temp->next;
-        }
-        return size;
+        return node_sum;
     }
 
 /**
@@ -997,7 +992,6 @@ template <class T>
         Node<T>* temp = this->head;
         for(int i = 0; i < index; i++){
             temp = temp->next;
-            cout <<"here";
         }
         return temp->data;
     }
@@ -1295,21 +1289,22 @@ template <class T>
     }
 
 template<class T>
-void Linked_List<T>::pop_node() {
+bool Linked_List<T>::pop_node() {
     if(tail == nullptr)
-        return;
+        return 0;
     Node<T>* temp = tail;
     if(tail->prev == nullptr){
         tail = nullptr;
         head = nullptr;
         delete  temp;
         node_sum --;
-        return;
+        return 1;
     }
     tail = tail->prev;
     tail->next = nullptr;
     node_sum--;
     delete temp;
+    return 1;
 }
 
 /**
@@ -1546,7 +1541,7 @@ inline void Vector_List <int> :: generate(){
 
     arr.clear();
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node(rand() % 49 + 1);
@@ -1560,7 +1555,7 @@ template <>
 inline void Vector_List<float> :: generate(){
     arr.clear();
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node((float)rand() / RAND_MAX);
@@ -1574,7 +1569,7 @@ template <>
 inline void Vector_List <char> :: generate(){
     arr.clear();
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
 
     for (int i = 0; i < length; i++){
         add_node(rand() % 95 + 32);
@@ -1593,7 +1588,7 @@ inline void Vector_List <string> :: generate(){
             "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
             "abcdefghijklmnopqrstuvwxyz";
 
-    int length = rand() % 7 + 5;    //the length of the list
+    int length = 1000;    //the length of the list
     int string_length;              //the length of the string
     string temp;                    //temporary string that will be in the list
 
@@ -1865,10 +1860,11 @@ void Vector_List <T> :: radixsort() {
  * Deletes the last element of the list
  */
 template<class T>
-void Vector_List<T>::pop_node() {
+bool Vector_List<T>::pop_node() {
     if(arr.size() == 0)
-        return;
+        return 0;
     arr.pop_back();
+    return 1;
 }
 
 /**

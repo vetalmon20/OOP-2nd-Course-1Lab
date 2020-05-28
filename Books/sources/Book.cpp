@@ -46,6 +46,7 @@ void Book :: name_set(string in) {
     name = in;
 }
 
+
 /**
 * Returns the author
 *
@@ -234,8 +235,13 @@ bool operator >= (Book &left, Book &right){
         return left.release_get().month >= right.release_get().month;
 
     return left.release_get().day >= right.release_get().day;
-
 }
+
+bool operator == (Book left, Book right)
+{
+    return(left.name_get() == right.name_get());
+}
+
 
 /**
  * Created a book with input parameters of the user

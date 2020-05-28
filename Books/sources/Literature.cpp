@@ -80,7 +80,7 @@ inline void Array_literature :: generate_Books(){
     vector <string> authors;             //authors of the book
     int authors_length;                  //the number of authors
 
-    int length = rand() % 7 + 5;         //Random num of the list
+    int length = 1000;         //Random num of the list
 
     int Book_name_length;                //the length of the name of the Book
     string Book_name;                    //temporary string that will be in the list
@@ -200,8 +200,8 @@ inline void Array_literature :: display_books() {
 /**
  * Pops the last book
  */
-inline void Array_literature::pop_book() {
-    Books.pop_node();
+inline bool Array_literature::pop_book() {
+    return Books.pop_node();
 }
 
 /**
@@ -277,7 +277,7 @@ inline void Linked_literature :: generate_Books(){
     vector <string> authors;             //authors of the book
     int authors_length;                  //the number of authors
 
-    int length = rand() % 7 + 5;         //Random num of the list
+    int length = 1000;         //Random num of the list
 
     int Book_name_length;                //the length of the name of the Book
     string Book_name;                    //temporary string that will be in the list
@@ -394,8 +394,8 @@ inline void Linked_literature ::display_books() {
 /**
  * Pops the last book
  */
-inline void Linked_literature::pop_book() {
-    Books.pop_node();
+inline bool Linked_literature::pop_book() {
+    return Books.pop_node();
 }
 
 /**
@@ -474,7 +474,7 @@ inline void Vector_literature::generate_Books() {
     vector <string> authors;             //authors of the book
     int authors_length;                  //the number of authors
 
-    int length = rand() % 7 + 5;         //Random num of the list
+    int length = 1000;         //Random num of the list
 
     int Book_name_length;                //the length of the name of the Book
     string Book_name;                    //temporary string that will be in the list
@@ -592,8 +592,8 @@ inline void Vector_literature::display_characters() {
 /**
  * Pops the last book
  */
-inline void Vector_literature::pop_book() {
-    Books.pop_node();
+inline bool Vector_literature::pop_book() {
+    return Books.pop_node();
 }
 
 /**

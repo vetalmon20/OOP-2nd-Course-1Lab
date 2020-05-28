@@ -37,17 +37,12 @@ addvalue::~addvalue()
     delete ui;
 }
 
-void addvalue::set_type(int type)
-{
-    this->type = type;
-}
-
 void addvalue::on_ok_clicked()
 {
     QString in = ui->user_input->toPlainText();
     std::string output_string = in.toStdString();
 
-    emit entered_value(output_string, check_input());
+    emit entered_value(in);
     this->close();
 }
 
@@ -56,29 +51,5 @@ void addvalue::on_cancel_clicked()
     this->close();
 }
 
-bool addvalue::check_input()
-{
-    QString in = ui->user_input->toPlainText();
-    std::string in_str = in.toStdString();
-
-    switch (this->type) {
-        case 0:{
-            return isInteger(in_str);
-            }
-        case 1:{
-            return isFloat(in_str);
-            }
-        case 2:{
-            return isChar(in_str);
-            }
-        case 3:{
-            return true;
-        }
-        default:{
-            cout << "CRITICAL ERROR. WRONG TYPE OF DATA" << endl;
-            return false;
-            }
-    }
-}
 
 

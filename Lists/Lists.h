@@ -57,7 +57,7 @@ public:
      *
      * @return the element in the tail of the list
      */
-    virtual void pop_node() = 0;
+    virtual bool pop_node() = 0;
 
     /**
      * Pure virtual function that randomly generates the List of spec. data
@@ -267,7 +267,7 @@ public:
      *
      * @return the element in the tail of the list
      */
-    void pop_node() override;
+    bool pop_node() override;
 
     /**
      * Function that randomly generates the List of spec. data
@@ -458,7 +458,7 @@ public:
      *
      * @return the element in the tail of the list
      */
-    void pop_node() override ;
+    bool pop_node() override ;
 
     /**
     * Function that randomly generates the List of spec. data
@@ -641,7 +641,7 @@ public:
      *
      * @return the element in the tail of the list
      */
-    void pop_node() override ;
+    bool pop_node() override ;
 
     /**
      * Function that randomly generates the List of spec. data

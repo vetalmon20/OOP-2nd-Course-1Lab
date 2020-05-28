@@ -7,10 +7,29 @@ mainwindow::mainwindow(QWidget *parent) :
     ui(new Ui::mainwindow)
 {
     ui->setupUi(this);
+
+    connect_db();
+
+    curr_literature = new Vector_literature();
+
+    fill_table();
+    QTableView *books_table = this->ui->tableLiterature;
+    books_table->horizontalHeader()->setStretchLastSection(true);
+    books_table->setColumnWidth(3, this->width() / 18);
+    books_table->setColumnWidth(4, this->width() / 6);
+    books_table->setColumnWidth(5, this->width() / 5);
+    books_table->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    books_table->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+    QHeaderView *header = qobject_cast<QTableView *>(books_table)->horizontalHeader();
+    connect(header, &QHeaderView::sectionClicked, this, &mainwindow::sort_by_section);
+
+    fill_literature();
 }
 
 mainwindow::~mainwindow()
 {
+    disconnect_db();
     delete ui;
 }
 
@@ -43,500 +62,326 @@ inline std::string to_str(Book input){
     return output;
 }
 
-template <class T>
-void mainwindow::display_list(IList<T>* input_list)
-{
-    int curr_size = input_list->get_curr_size();
-    for(int i = 0; i < curr_size; i++){
-        T temp = (*input_list)[i];
-        ui->listList->addItem(QString::fromStdString(to_str(temp)));
-    }
-}
-
-
 void mainwindow::display_literature(Literature* input_literature){
     int curr_size = input_literature->get_curr_size();
     for(int i = 0; i < curr_size; i++){
         Book temp = (*input_literature)[i];
-        ui->literatureList->addItem(QString::fromStdString(to_str(temp)));
+        //ui->literatureList->addItem(QString::fromStdString(to_str(temp)));
     }
 }
 
-//*********************
-void mainwindow::on_generateList_clicked()
+void mainwindow::fill_literature()
 {
-    ui->listList->clear();
-    curr_list<int> = nullptr;
-    curr_list<float> = nullptr;
-    curr_list<char> = nullptr;
-    curr_list<std::string> = nullptr;
+    Book temp;
 
-    int data_type = 0;
+    std::string name;
+    vector <std::string> authors;             //authors of the book
+    Date date;
+    int pages;
+    std::string annotation;
+    vector<Character> characters;        //characters for the book
 
-    if(ui->floatCase->isChecked())
-        data_type = 1;
-    else {
-        if(ui->charCase->isChecked())
-            data_type = 2;
-        else {
-            if(ui->stringCase->isChecked())
-                data_type = 3;
-        }
+    for(int i = 0; i < books_size; i++){
+        name = ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,0)).toString().toStdString();
+
+        QDate qdate =  QDate::fromString(ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,1)).toString(),"dd.MM.yyyy");
+        date.day = qdate.day();
+        date.month = qdate.month();
+        date.year = qdate.year();
+
+        authors = get_authors_from_qstr(ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,2)).toString());
+
+        pages = std::stoi(ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,3)).toString().toStdString());
+
+        characters = get_characters_from_qstr(ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,4)).toString(), name);
+
+        annotation =  ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(i,5)).toString().toStdString();
+
+
+        temp.new_book(name, authors, date, pages, annotation, characters);
+
+        curr_literature->add_book(temp);
     }
-    curr_data_type = data_type;
 
-    int list_type = 0;
-
-    if(ui->arrayCase->isChecked())
-        list_type = 1;
-    else {
-        if(ui->vectorCase->isChecked())
-            list_type = 2;
-    }
-    curr_list_type = list_type;
-
-    switch(data_type){
-        case 0:{
-            IList<int> *int_ptr;
-            switch(list_type){
-                case 0:{
-                    Linked_List<int> *temp = new Linked_List<int>;
-                    int_ptr = temp;
-                    int_ptr->generate();
-                    display_list(int_ptr);
-                    curr_list<int> = int_ptr;
-                    break;
-                }
-                case 1:{
-                    Arr_List<int> *temp = new Arr_List<int>;
-                    int_ptr = temp;
-                    int_ptr->generate();
-                    curr_list<int> = int_ptr;
-                    display_list(int_ptr);
-                    break;
-                }
-                case 2:{
-                    Vector_List<int> *temp = new Vector_List<int>;
-                    int_ptr = temp;
-                    int_ptr->generate();
-                    curr_list<int> = int_ptr;
-                    display_list(int_ptr);
-                    break;
-                }
-                default:{
-                    std::cout << "CRITICAL ERROR. WRONG LIST TYPE" << endl;
-                }
-            }
-            break;
-        }
-        case 1:{
-            IList<float> *float_ptr;
-            switch(list_type){
-                case 0:{
-                    Linked_List<float> *temp = new Linked_List<float>;
-                    float_ptr = temp;
-                    float_ptr->generate();
-                    curr_list<float> = float_ptr;
-                    display_list(float_ptr);
-                    break;
-                }
-                case 1:{
-                    Arr_List<float> *temp = new Arr_List<float>;
-                    float_ptr = temp;
-                    float_ptr->generate();
-                    curr_list<float> = float_ptr;
-                    display_list(float_ptr);
-                    break;
-                }
-                case 2:{
-                    Vector_List<float> *temp = new Vector_List<float>;
-                    float_ptr = temp;
-                    float_ptr->generate();
-                    curr_list<float> = float_ptr;
-                    display_list(float_ptr);
-                    break;
-                }
-                default:{
-                    std::cout << "CRITICAL ERROR. WRONG LIST TYPE" << endl;
-                }
-            }
-            break;
-        }
-        case 2:{
-            IList<char> *char_ptr;
-            switch(list_type){
-                case 0:{
-                    Linked_List<char> *temp = new Linked_List<char>;
-                    char_ptr = temp;
-                    char_ptr->generate();
-                    curr_list<char> = char_ptr;
-                    display_list(char_ptr);
-                    break;
-                }
-                case 1:{
-                    Arr_List<char> *temp = new Arr_List<char>;
-                    char_ptr = temp;
-                    char_ptr->generate();
-                    curr_list<char> = char_ptr;
-                    display_list(char_ptr);
-                    break;
-                }
-                case 2:{
-                   Vector_List<char> *temp = new Vector_List<char>;
-                    char_ptr = temp;
-                    char_ptr->generate();
-                    curr_list<char> = char_ptr;
-                    display_list(char_ptr);
-                    break;
-                }
-                default:{
-                    std::cout << "CRITICAL ERROR. WRONG LIST TYPE" << endl;
-                }
-            }
-            break;
-        }
-        case 3:{
-            IList<std::string> *string_ptr;
-            switch(list_type){
-                case 0:{
-                    Linked_List<std::string> *temp = new Linked_List<std::string>;
-                    string_ptr = temp;
-                    string_ptr->generate();
-                    curr_list<std::string> = string_ptr;
-                    display_list(string_ptr);
-                    break;
-                }
-                case 1:{
-                    Arr_List<std::string> *temp = new Arr_List<std::string>;
-                    string_ptr = temp;
-                    string_ptr->generate();
-                    curr_list<std::string> = string_ptr;
-                    display_list(string_ptr);
-                    break;
-                }
-                case 2:{
-                    Vector_List<std::string> *temp = new Vector_List<std::string>;
-                    string_ptr = temp;
-                    string_ptr->generate();
-                    curr_list<std::string> = string_ptr;
-                    display_list(string_ptr);
-                    break;
-                }
-                default:{
-                    std::cout << "CRITICAL ERROR. WRONG LIST TYPE" << endl;
-                }
-            }
-            break;
-        }
-        default:{
-            cout << "CRITICAL ERROR. WRONG DATA TYPE" << endl;
-        }
-    }
-    //return nullptr;
-    list_present = 1;
+    curr_literature->display_books();
 }
 
-
-void mainwindow::add_node(string input, bool checked)
+QSqlQuery* mainwindow::update_table_view()
 {
+    QSqlQuery *qry = new QSqlQuery(books_db);
+    QSqlQueryModel *model = new QSqlQueryModel();
 
-    if(checked == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You entered the wrong data");
-        msgBox.exec();
-        return;
-    }
-    ui->listList->addItem(QString::fromStdString(input));
-    switch(curr_data_type){
-        case 0:{
-            curr_list<int>->add_node(std::stoi(input));
-            break;
-        }
-        case 1:{
-            curr_list<float>->add_node(std::stoi(input));
-            break;
-        }
-        case 2:{
-             curr_list<char>->add_node(input[0]);
-             break;
-        }
-        case 3:{
-             curr_list<std::string>->add_node(input);
-             break;
-        }
-        default:{
-            std::cout << "CRITICAL ERROR. WRONG LIST TYPE" << endl;
-        }
-    }
+    qry->prepare("SELECT * FROM BOOKS");
+
+    qry->exec();
+    model->setQuery(*qry);
+    ui->tableLiterature->setModel(model);
+    return qry;
 }
 
-
-void mainwindow::on_addList_clicked()
+bool mainwindow::connect_db()
 {
-    if(list_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the list");
-        msgBox.exec();
-        return;
-    }
-    AV_Win = new addvalue(this);
-    AV_Win->setModal(true);
-    AV_Win->show();
-    connect(AV_Win ,&addvalue::entered_value, this, &mainwindow::add_node);
-    connect(this, &mainwindow::data_type_info, AV_Win, &addvalue::set_type);
+    books_db = QSqlDatabase::addDatabase("QSQLITE");
+    books_db.setDatabaseName("D:/MyRepositories/OOP/OOP-2nd-Course-1Lab/Data_Bases/Books.db");
 
-    emit data_type_info(this->curr_data_type);
+    if(!books_db.open())
+        return 0;
+    return 1;
 }
 
-
-void mainwindow::on_deleteList_clicked()
+void mainwindow::disconnect_db()
 {
-    if(list_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the list");
-        msgBox.exec();
-        return;
-    }
-   switch(curr_data_type){
-       case 0:{
-           if(curr_list<int>->get_curr_size() == 1)
-               list_present = 0;
-           curr_list<int>->pop_node();
-           break;
-       }
-       case 1:{
-           if(curr_list<float>->get_curr_size() == 1)
-               list_present = 0;
-           curr_list<float>->pop_node();
-           break;
-       }
-       case 2:{
-           if(curr_list<char>->get_curr_size() == 1)
-               list_present = 0;
-           curr_list<char>->pop_node();
-           break;
-       }
-       case 3:{
-           if(curr_list<std::string>->get_curr_size() == 1)
-               list_present = 0;
-           curr_list<std::string>->pop_node();
-           break;
-       }
-   }
-
-
-   ui->listList->takeItem(ui->listList->count() - 1);
+    books_db.close();
+    books_db.removeDatabase(QSqlDatabase::defaultConnection);
 }
 
-
-void mainwindow::on_sortList_clicked()
+void mainwindow::fill_table()
 {
-    if(list_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the list");
-        msgBox.exec();
-        return;
-    }
-    ui->listList->clear();
-    switch(curr_data_type){
-        case 0:{
-            curr_list<int>->quicksort();
-            display_list(curr_list<int>);
-            break;
+    QSqlQuery *qry = update_table_view();
+
+    if (books_db.driver()->hasFeature(QSqlDriver::QuerySize)) {
+            this->books_size = qry->size();
+        } else {
+            qry->last();
+            this->books_size = qry->at() + 1;
         }
-        case 1:{
-            curr_list<float>->quicksort();
-            display_list(curr_list<float>);
-            break;
-        }
-        case 2:{
-            curr_list<char>->quicksort();
-            display_list(curr_list<char>);
-            break;
-        }
-        case 3:{
-            curr_list<std::string>->quicksort();
-            display_list(curr_list<std::string>);
-            break;
-        }
-    }
 }
-
-
-void mainwindow::on_deleteEntireList_clicked()
-{
-    switch(curr_data_type){
-        case 0:{
-            curr_list<int> = nullptr;
-            break;
-        }
-        case 1:{
-            curr_list<float> = nullptr;
-            break;
-        }
-        case 2:{
-            curr_list<char> = nullptr;
-            break;
-        }
-        case 3:{
-            curr_list<std::string> = nullptr;
-            break;
-        }
-    }
-    list_present = 0;
-    ui->listList->clear();
-}
-
-
-void mainwindow::on_generateLiterature_clicked()
-{
-    ui->literatureList->clear();
-    curr_literature = nullptr;
-
-    int literature_type = 0;
-    if(ui->arrayLiteratureCase->isChecked())
-        literature_type = 1;
-    else {
-        if(ui->charCase->isChecked())
-            literature_type = 2;
-    }
-    curr_literature_type = literature_type;
-
-    switch(curr_literature_type){
-        case 0:{
-            Linked_literature *temp = new Linked_literature;
-            curr_literature = temp;
-            break;
-        }
-        case 1:{
-            Array_literature *temp = new Array_literature;
-            curr_literature = temp;
-            break;
-        }
-        case 2:{
-            Vector_literature *temp = new Vector_literature;
-            curr_literature = temp;
-            break;
-        }
-        default:{
-            cout << "CRITICAL ERROR. WRONG LITERATURE TYPE." << endl;
-            return;
-        }
-    }
-    curr_literature->generate_Books();
-    display_literature(curr_literature);
-
-    literature_present = 1;
-}
-
 
 void mainwindow::on_addBook_clicked()
 {
-    if(literature_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the literature");
-        msgBox.exec();
-        return;
-    }
     AB_Win = new addbook(this);
     AB_Win->setModal(true);
     AB_Win->show();
     connect(AB_Win ,&addbook::entered_value, this, &mainwindow::add_book);
 }
 
-
-void mainwindow::add_book(string input, bool checked, QDate date)
+void mainwindow::add_book(QString name, QDate date, QString author, int page_number, QString characters, QString annotation)
 {
-    if(checked == 0){
-        QMessageBox msgBox;
-        msgBox.setText("The name of the book can not be empty");
-        msgBox.exec();
-        return;
-    }
-
     Book *temp = new Book();
-    Date release_date;
-
-    release_date.day = date.day();
-    release_date.month = date.month();
-    release_date.year = date.year();
-
-    if(input[input.size() - 1] == '\n')
-        input.erase(input.size() - 1, 1);
-    temp->name_set(input);
-    temp->release_set(release_date);
-    temp->page_num_set(rand() % 500 + 100);
-
-
-    ui->literatureList->addItem(QString::fromStdString(to_str(*temp)));
+    temp->new_book(name.toStdString(), get_authors_from_qstr(author), get_date_from_qdate(date), page_number, annotation.toStdString(), get_characters_from_qstr(characters, name.toStdString()));
     curr_literature->add_book(*temp);
 
-}
+    QString date_qstr = date.toString("yyyy-MM-dd");
 
+    QSqlQuery query;
+    std::string query_text= "INSERT INTO BOOKS (NAME, DATE, AUTHOR, \"PAGE NUMBER\", CHARACTERS, ANNOTATION) "
+                                       "VALUES ('";
+
+    query_text += name.toStdString();
+    query_text += "', '";
+    query_text += date_qstr.toStdString();
+    query_text += "', '";
+    query_text += author.toStdString();
+    query_text += "', ";
+    query_text += std::to_string(page_number);
+    query_text += ", '";
+    query_text += characters.toStdString();
+    query_text += "', '";
+    query_text += annotation.toStdString();
+    query_text += "')";
+
+    if(query.prepare(QString::fromStdString(query_text))){
+       query.exec(QString::fromStdString(query_text));
+    } else {
+        cout << "wrong sql query!" << endl;
+        cout <<query_text << endl;
+    }
+
+    update_table_view();
+
+    books_size++;
+}
 
 void mainwindow::on_deleteBook_clicked()
 {
-    if(literature_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the literature");
-        msgBox.exec();
-        return;
+    QSqlQuery *qry = new QSqlQuery(books_db);
+    QModelIndexList temporary;
+    QTableView *books_table = this->ui->tableLiterature;
+    QItemSelectionModel *select =  books_table->selectionModel();
+    QString query_text = "DELETE FROM BOOKS WHERE NAME = '";
+    QString query_text_default = query_text;
+
+    temporary = select->selectedRows();
+    for(int i = 0; i < temporary.size(); i++){
+        QString book_name = ui->tableLiterature->model()->data(ui->tableLiterature->model()->index(temporary[i].row(),0)).toString();
+        book_name.push_back("'");
+        query_text.push_back(book_name);
+        if(qry->prepare(query_text)){
+            qry->exec(query_text);
+            cout << query_text.toStdString() << endl;
+            query_text = query_text_default;
+        } else {
+            cout << "wrong sql query!";
+            query_text = query_text_default;
+        }
     }
 
-    if(curr_literature->get_curr_size() == 1)
-        literature_present = 0;
-    curr_literature->pop_book();
-    ui->literatureList->takeItem(ui->literatureList->count() - 1);
+    update_table_view();
 }
-
-
-void mainwindow::on_sortBook_clicked()
-{
-    if(literature_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the literature");
-        msgBox.exec();
-        return;
-    }
-    ui->literatureList->clear();
-    curr_literature->sort_books();
-    display_literature(curr_literature);
-}
-
 
 void mainwindow::on_findSeries_clicked()
 {
-    if(literature_present == 0){
-        QMessageBox msgBox;
-        msgBox.setText("You need to generate the literature");
-        msgBox.exec();
-        return;
-    }
         QMessageBox msgBox;
         //msgBox.setText(curr_literature)
 
         AV_Win = new addvalue(this);
         AV_Win->show();
         connect(AV_Win ,&addvalue::entered_value, this, &mainwindow::show_series);
-        connect(this, &mainwindow::data_type_info, AV_Win, &addvalue::set_type);
-
-        emit data_type_info(3);
-
 }
 
 
-void mainwindow::show_series(string input_character)
+void mainwindow::show_series(QString input_character)
 {
     QMessageBox msgBox;
-    msgBox.setText(QString::fromStdString(curr_literature->find_series(input_character)));
+    msgBox.setText(QString::fromStdString(curr_literature->find_series(input_character.toStdString())));
     msgBox.exec();
 }
 
-
-void mainwindow::on_deleteEntireLiterature_clicked()
+void mainwindow::sort_by_section(int section_index)
 {
-    curr_literature = nullptr;
-    literature_present = 0;
-    ui->literatureList->clear();
+    switch (section_index) {
+        case 0:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
 
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY NAME ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY NAME ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+        case 1:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
+
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY date(DATE) ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY date(DATE) ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+        case 2:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
+
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY AUTHOR ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY AUTHOR ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+        case 3:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
+
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY \"PAGE NUMBER\" ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY \"PAGE NUMBER\" ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+        case 4:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
+
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY CHARACTERS ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY CHARACTERS ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+        case 5:{
+            QSqlQuery *qry = new QSqlQuery(books_db);
+            QSqlQueryModel *model = new QSqlQueryModel();
+
+            if(qry->prepare("SELECT * FROM BOOKS ORDER BY ANNOTATION ASC")){
+                qry->exec("SELECT * FROM BOOKS ORDER BY ANNOTATION ASC");
+                cout << "yes";
+                model->setQuery(*qry);
+                ui->tableLiterature->setModel(model);
+            } else {
+                cout << "wrong sql query!";
+            }
+            return;
+        }
+    }
+}
+
+vector<string> get_authors_from_qstr(QString in)
+{
+    string in_str = in.toStdString();
+    string author = "def_author";
+    vector<string> authors;
+    unsigned long long int start, end;
+    start = end = 0;
+    for(unsigned long long int i = 0; i < in_str.size(); i++){
+        if(in_str[i] == ','){
+            end = i;
+            author = in_str.substr(start, end - start);
+            authors.push_back(author);
+            start = i + 1;
+        }
+    }
+
+    end = in_str.size();
+    author = in_str.substr(start, end - start);
+    authors.push_back(author);
+
+    return authors;
+}
+
+vector<Character> get_characters_from_qstr(QString in, string book_name)
+{
+    string in_str = in.toStdString();
+    Character character;
+    vector<Character> characters;
+    unsigned long long int start, end;
+    start = end = 0;
+    for(unsigned long long int i = 0; i < in_str.size(); i++){
+        if(in_str[i] == ','){
+            end = i;
+            character.nickname_set(in_str.substr(start, end - start));
+            character.mention_set(book_name);
+            character.importance_set(1);
+            characters.push_back(character);
+            start = i + 1;
+        }
+    }
+
+    end = in_str.size();
+    character.nickname_set(in_str.substr(start, end - start));
+    character.mention_set(book_name);
+    character.importance_set(1);
+    characters.push_back(character);
+
+    return characters;
+}
+
+Date get_date_from_qdate(QDate in)
+{
+    Date temp;
+    temp.day = in.day();
+    temp.month = in.month();
+    temp.year = in.year();
+    return temp;
 }

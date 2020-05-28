@@ -142,6 +142,15 @@ public:
     friend bool operator <= (Book &left, Book &right);
 
     /**
+     * Allows to get the answer of the operator "=="
+    *
+    * @param left  The parameter that would be passed on the left of the "<="
+    * @param right The parameter that would be passed on the right of the "<="
+    * @return The bool value that define the answer of the operator "<="
+    */
+    friend bool operator == (Book left, Book right);
+
+    /**
     * Allows to get the answer of the operator ">="
     *
     * @param left The parameter that would be passed on the left of the ">="

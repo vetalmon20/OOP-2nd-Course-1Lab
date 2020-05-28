@@ -19,10 +19,9 @@ public:
     explicit addvalue(QWidget *parent = nullptr);
     ~addvalue();
 signals:
-    void entered_value(string input, bool checked);
+    void entered_value(QString character_name);
 
 public slots:
-    void set_type(int type);
 
 private slots:
     void on_ok_clicked();
@@ -30,9 +29,6 @@ private slots:
     void on_cancel_clicked();
 private:
     Ui::addvalue *ui;
-    int type;
-
-    bool check_input();
 };
 
 bool isInteger(const std::string & in);

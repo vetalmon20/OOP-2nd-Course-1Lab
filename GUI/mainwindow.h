@@ -5,11 +5,15 @@
 #include <QButtonGroup>
 #include "Lists.h"
 #include "Literature.h"
-#include "addvalue.h"
 #include "addbook.h"
+#include "addvalue.h"
 #include <iostream>
 #include <QMessageBox>
 #include <QDateTimeEdit>
+#include <QSqlDatabase>
+#include <QSqlQueryModel>
+#include <QSqlQuery>
+#include <QSqlDriver>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,53 +29,37 @@ public:
     explicit mainwindow(QWidget *parent = nullptr);
     ~mainwindow();
 
-
 private slots:
-    void on_generateList_clicked();
-
-    void on_addList_clicked();
-
-    void add_node(string input, bool checked);
-
-    void on_deleteList_clicked();
-
-    void on_sortList_clicked();
-
-    void on_deleteEntireList_clicked();
-
-    void on_generateLiterature_clicked();
-
     void on_addBook_clicked();
 
-    void add_book(string input, bool checked, QDate date);
+    void add_book(QString name, QDate date, QString author, int page_number, QString characters, QString annotation);
 
     void on_deleteBook_clicked();
 
-    void on_sortBook_clicked();
-
     void on_findSeries_clicked();
 
-    void show_series(string input_character);
+    void show_series(QString input_character);
 
-    void on_deleteEntireLiterature_clicked();
-
-signals:
-     void data_type_info(int type);
+    void sort_by_section(int section_index);
 
 private:
     Ui::mainwindow *ui;
-    addvalue *AV_Win;
     addbook *AB_Win;
-    int curr_data_type = 0;
-    int curr_list_type = 0;
-    int curr_literature_type = 0;
-    bool list_present = 0;
-    bool literature_present = 0;
+    addvalue *AV_Win;
+    QSqlDatabase books_db;
+    Vector_literature* curr_literature;
+    int books_size = 0;
 
-    template <class T>
-    void display_list(IList<T>* input_list);
     void display_literature(Literature* input_literature);
 
+    void fill_literature();
+
+    QSqlQuery* update_table_view();
+
+    bool connect_db();
+    void disconnect_db();
+
+    void fill_table();
 };
 
 /**
@@ -80,9 +68,10 @@ private:
 template<class T>
 std::string to_str(T input);
 
-template<class T>
-IList<T>* curr_list;
+vector<std::string> get_authors_from_qstr(QString in);
 
-inline Literature* curr_literature;
+vector<Character> get_characters_from_qstr(QString in, string book_name);
+
+Date get_date_from_qdate(QDate in);
 
 #endif // MAINWINDOW_H
